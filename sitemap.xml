@@ -2,19 +2,14 @@
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <sitemap>
-    <loc>https://example.com/en/sitemap.xml</loc>
+    <loc>https://SSAFY-Seoul-CS-Study.github.io/ko/sitemap.xml</loc>
     
-      <lastmod>2023-01-30T00:43:51+09:00</lastmod>
-    
-  </sitemap>
-  
-  <sitemap>
-    <loc>https://example.com/zh-cn/sitemap.xml</loc>
+      <lastmod>2023-02-13T00:57:57+09:00</lastmod>
     
   </sitemap>
   
   <sitemap>
-    <loc>https://example.com/ar/sitemap.xml</loc>
+    <loc>https://SSAFY-Seoul-CS-Study.github.io/en/sitemap.xml</loc>
     
   </sitemap>
   

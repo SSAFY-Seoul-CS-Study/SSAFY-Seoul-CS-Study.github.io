@@ -2,9 +2,9 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Categories on SSAFY 서울 CS 스터디 블로그</title>
-        <link>https://SSAFY-Seoul-CS-Study.github.io/categories/</link>
+        <link>https://SSAFY-Seoul-CS-Study.github.io/en/categories/</link>
         <description>Recent content in Categories on SSAFY 서울 CS 스터디 블로그</description>
         <generator>Hugo -- gohugo.io</generator>
-        <language>en-us</language><atom:link href="https://SSAFY-Seoul-CS-Study.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+        <language>en-us</language><atom:link href="https://SSAFY-Seoul-CS-Study.github.io/en/categories/index.xml" rel="self" type="application/rss+xml" />
     </channel>
 </rss>

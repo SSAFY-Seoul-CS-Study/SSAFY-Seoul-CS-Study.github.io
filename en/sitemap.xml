@@ -2,65 +2,40 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://example.com/</loc>
-    <lastmod>2023-01-30T00:43:51+09:00</lastmod>
+    <loc>https://SSAFY-Seoul-CS-Study.github.io/en/categories/</loc>
     <xhtml:link
                 rel="alternate"
-                hreflang="zh-cn"
-                href="https://example.com/zh-cn/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="ar"
-                href="https://example.com/ar/"
+                hreflang="ko"
+                href="https://SSAFY-Seoul-CS-Study.github.io/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://example.com/"
+                href="https://SSAFY-Seoul-CS-Study.github.io/en/categories/"
                 />
   </url><url>
-    <loc>https://example.com/post/</loc>
-    <lastmod>2023-01-30T00:43:51+09:00</lastmod>
-  </url><url>
-    <loc>https://example.com/p/test-%ED%8F%AC%EC%8A%A4%ED%8A%B8/</loc>
-    <lastmod>2023-01-30T00:43:51+09:00</lastmod>
-  </url><url>
-    <loc>https://example.com/p/ssafy-cs-study/</loc>
-    <lastmod>2023-01-30T00:17:42+09:00</lastmod>
-  </url><url>
-    <loc>https://example.com/categories/</loc>
+    <loc>https://SSAFY-Seoul-CS-Study.github.io/en/</loc>
     <xhtml:link
                 rel="alternate"
-                hreflang="zh-cn"
-                href="https://example.com/zh-cn/categories/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="ar"
-                href="https://example.com/ar/categories/"
+                hreflang="ko"
+                href="https://SSAFY-Seoul-CS-Study.github.io/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://example.com/categories/"
+                href="https://SSAFY-Seoul-CS-Study.github.io/en/"
                 />
   </url><url>
-    <loc>https://example.com/tags/</loc>
+    <loc>https://SSAFY-Seoul-CS-Study.github.io/en/tags/</loc>
     <xhtml:link
                 rel="alternate"
-                hreflang="zh-cn"
-                href="https://example.com/zh-cn/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="ar"
-                href="https://example.com/ar/tags/"
+                hreflang="ko"
+                href="https://SSAFY-Seoul-CS-Study.github.io/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://example.com/tags/"
+                href="https://SSAFY-Seoul-CS-Study.github.io/en/tags/"
                 />
   </url>
 </urlset>
