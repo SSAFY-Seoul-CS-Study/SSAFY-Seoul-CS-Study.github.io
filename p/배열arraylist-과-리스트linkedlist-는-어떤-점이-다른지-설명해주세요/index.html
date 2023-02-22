@@ -2,44 +2,29 @@
 <html lang="en-us" dir="ltr">
     <head><meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='날짜: 2023/01/30 담당자: TPoster 상태: Done 유형: 자료구조
-완전이진트리란?
-https://velog.io/@hanif/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0-%EC%9D%B4%EC%A7%84-%ED%8A%B8%EB%A6%AC
-완전 : 마지막 레벨을 제외한 모든 레벨이 가득찼으며, 마지막 레벨은 왼쪽부터 채워지는
-이진 : 자식 노드의 개수가 최대 2개인
-트리 : 1개의 뿌리 노드에서 시작하여, 뿌리 노드를 제외한 모든 노드가 부모 노드를 갖는 그래프형 자료구조
-&#43;&#43; 그래프와 달리 사이클이 존재해서는 안된다.
-사이클 : 시작 노드에서 출발해 다른 노드를 거쳐서 다시 시작 노드로 돌아옴 구현방식
-https://minhamina.tistory.com/80
-완전이진트리 내 각각의 노드에게 뿌리 노드부터 1씩 증가하는 인덱스를 부여한다.'>
-<title>완전 이진트리 구조를 배열로 어떻게 구현할 수 있을지 설명해주세요.</title>
+— 차이점
+https://javagoal.com/difference-between-arraylist-and-linkedlist/
+차이점 ArrayList LinkedList 메모리상에서 데이터 분포 연속적 불규칙적 기본 용량 10 (에서 동적으로 변화) 없음 데이터 접근 방식 인덱스로 임의접근 가능 리스트 전체 순회 데이터 구조 인덱스에 값 저장 노드에 이전/이후 노드 각각의 주소와 값 저장 성능 데이터 접근이 빠름 (인덱스 활용) 데이터 추가/제거 작업이 빠름 (대상 노드를 가르키는 주소값만 수정) &#43;&#43; 공통점
+둘다 선형 자료구조임 (모든 데이터가 앞이나 뒤로 1:1 관계임) 선언과 동시에 용량을 정해야하는 기존의 배열을 대체하기 위한 자료구조임 '>
+<title>배열(ArrayList) 과 리스트(LinkedList) 는 어떤 점이 다른지 설명해주세요</title>
 
-<link rel='canonical' href='https://example.com/p/%EC%99%84%EC%A0%84-%EC%9D%B4%EC%A7%84%ED%8A%B8%EB%A6%AC-%EA%B5%AC%EC%A1%B0%EB%A5%BC-%EB%B0%B0%EC%97%B4%EB%A1%9C-%EC%96%B4%EB%96%BB%EA%B2%8C-%EA%B5%AC%ED%98%84%ED%95%A0-%EC%88%98-%EC%9E%88%EC%9D%84%EC%A7%80-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94./'>
+<link rel='canonical' href='https://example.com/p/%EB%B0%B0%EC%97%B4arraylist-%EA%B3%BC-%EB%A6%AC%EC%8A%A4%ED%8A%B8linkedlist-%EB%8A%94-%EC%96%B4%EB%96%A4-%EC%A0%90%EC%9D%B4-%EB%8B%A4%EB%A5%B8%EC%A7%80-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94/'>
 
-<link rel="stylesheet" href="/scss/style.min.8191399262444ab68b72a18c97392f5349be20a1615d77445be51e974c144cff.css"><meta property='og:title' content='완전 이진트리 구조를 배열로 어떻게 구현할 수 있을지 설명해주세요.'>
+<link rel="stylesheet" href="/scss/style.min.8191399262444ab68b72a18c97392f5349be20a1615d77445be51e974c144cff.css"><meta property='og:title' content='배열(ArrayList) 과 리스트(LinkedList) 는 어떤 점이 다른지 설명해주세요'>
 <meta property='og:description' content='날짜: 2023/01/30 담당자: TPoster 상태: Done 유형: 자료구조
-완전이진트리란?
-https://velog.io/@hanif/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0-%EC%9D%B4%EC%A7%84-%ED%8A%B8%EB%A6%AC
-완전 : 마지막 레벨을 제외한 모든 레벨이 가득찼으며, 마지막 레벨은 왼쪽부터 채워지는
-이진 : 자식 노드의 개수가 최대 2개인
-트리 : 1개의 뿌리 노드에서 시작하여, 뿌리 노드를 제외한 모든 노드가 부모 노드를 갖는 그래프형 자료구조
-&#43;&#43; 그래프와 달리 사이클이 존재해서는 안된다.
-사이클 : 시작 노드에서 출발해 다른 노드를 거쳐서 다시 시작 노드로 돌아옴 구현방식
-https://minhamina.tistory.com/80
-완전이진트리 내 각각의 노드에게 뿌리 노드부터 1씩 증가하는 인덱스를 부여한다.'>
-<meta property='og:url' content='https://example.com/p/%EC%99%84%EC%A0%84-%EC%9D%B4%EC%A7%84%ED%8A%B8%EB%A6%AC-%EA%B5%AC%EC%A1%B0%EB%A5%BC-%EB%B0%B0%EC%97%B4%EB%A1%9C-%EC%96%B4%EB%96%BB%EA%B2%8C-%EA%B5%AC%ED%98%84%ED%95%A0-%EC%88%98-%EC%9E%88%EC%9D%84%EC%A7%80-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94./'>
+— 차이점
+https://javagoal.com/difference-between-arraylist-and-linkedlist/
+차이점 ArrayList LinkedList 메모리상에서 데이터 분포 연속적 불규칙적 기본 용량 10 (에서 동적으로 변화) 없음 데이터 접근 방식 인덱스로 임의접근 가능 리스트 전체 순회 데이터 구조 인덱스에 값 저장 노드에 이전/이후 노드 각각의 주소와 값 저장 성능 데이터 접근이 빠름 (인덱스 활용) 데이터 추가/제거 작업이 빠름 (대상 노드를 가르키는 주소값만 수정) &#43;&#43; 공통점
+둘다 선형 자료구조임 (모든 데이터가 앞이나 뒤로 1:1 관계임) 선언과 동시에 용량을 정해야하는 기존의 배열을 대체하기 위한 자료구조임 '>
+<meta property='og:url' content='https://example.com/p/%EB%B0%B0%EC%97%B4arraylist-%EA%B3%BC-%EB%A6%AC%EC%8A%A4%ED%8A%B8linkedlist-%EB%8A%94-%EC%96%B4%EB%96%A4-%EC%A0%90%EC%9D%B4-%EB%8B%A4%EB%A5%B8%EC%A7%80-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94/'>
 <meta property='og:site_name' content='Example Site'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='' /><meta property='article:published_time' content='2023-02-13T00:57:30&#43;09:00'/><meta property='article:modified_time' content='2023-02-13T00:57:30&#43;09:00'/>
-<meta name="twitter:title" content="완전 이진트리 구조를 배열로 어떻게 구현할 수 있을지 설명해주세요.">
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='' /><meta property='article:published_time' content='2023-02-22T21:58:41&#43;09:00'/><meta property='article:modified_time' content='2023-02-22T21:58:41&#43;09:00'/>
+<meta name="twitter:title" content="배열(ArrayList) 과 리스트(LinkedList) 는 어떤 점이 다른지 설명해주세요">
 <meta name="twitter:description" content="날짜: 2023/01/30 담당자: TPoster 상태: Done 유형: 자료구조
-완전이진트리란?
-https://velog.io/@hanif/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0-%EC%9D%B4%EC%A7%84-%ED%8A%B8%EB%A6%AC
-완전 : 마지막 레벨을 제외한 모든 레벨이 가득찼으며, 마지막 레벨은 왼쪽부터 채워지는
-이진 : 자식 노드의 개수가 최대 2개인
-트리 : 1개의 뿌리 노드에서 시작하여, 뿌리 노드를 제외한 모든 노드가 부모 노드를 갖는 그래프형 자료구조
-&#43;&#43; 그래프와 달리 사이클이 존재해서는 안된다.
-사이클 : 시작 노드에서 출발해 다른 노드를 거쳐서 다시 시작 노드로 돌아옴 구현방식
-https://minhamina.tistory.com/80
-완전이진트리 내 각각의 노드에게 뿌리 노드부터 1씩 증가하는 인덱스를 부여한다.">
+— 차이점
+https://javagoal.com/difference-between-arraylist-and-linkedlist/
+차이점 ArrayList LinkedList 메모리상에서 데이터 분포 연속적 불규칙적 기본 용량 10 (에서 동적으로 변화) 없음 데이터 접근 방식 인덱스로 임의접근 가능 리스트 전체 순회 데이터 구조 인덱스에 값 저장 노드에 이전/이후 노드 각각의 주소와 값 저장 성능 데이터 접근이 빠름 (인덱스 활용) 데이터 추가/제거 작업이 빠름 (대상 노드를 가르키는 주소값만 수정) &#43;&#43; 공통점
+둘다 선형 자료구조임 (모든 데이터가 앞이나 뒤로 1:1 관계임) 선언과 동시에 용량을 정해야하는 기존의 배열을 대체하기 위한 자료구조임 ">
     </head>
     <body class="
     article-page
@@ -210,7 +195,7 @@ https://minhamina.tistory.com/80
 
     <div class="article-title-wrapper">
         <h2 class="article-title">
-            <a href="/p/%EC%99%84%EC%A0%84-%EC%9D%B4%EC%A7%84%ED%8A%B8%EB%A6%AC-%EA%B5%AC%EC%A1%B0%EB%A5%BC-%EB%B0%B0%EC%97%B4%EB%A1%9C-%EC%96%B4%EB%96%BB%EA%B2%8C-%EA%B5%AC%ED%98%84%ED%95%A0-%EC%88%98-%EC%9E%88%EC%9D%84%EC%A7%80-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94./">완전 이진트리 구조를 배열로 어떻게 구현할 수 있을지 설명해주세요.</a>
+            <a href="/p/%EB%B0%B0%EC%97%B4arraylist-%EA%B3%BC-%EB%A6%AC%EC%8A%A4%ED%8A%B8linkedlist-%EB%8A%94-%EC%96%B4%EB%96%A4-%EC%A0%90%EC%9D%B4-%EB%8B%A4%EB%A5%B8%EC%A7%80-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94/">배열(ArrayList) 과 리스트(LinkedList) 는 어떤 점이 다른지 설명해주세요</a>
         </h2>
     
         
@@ -232,7 +217,7 @@ https://minhamina.tistory.com/80
   <path d="M3 11h16" />
   <path d="M18 16.496v1.504l1 1" />
 </svg>
-                <time class="article-time--published">Feb 13, 2023</time>
+                <time class="article-time--published">Feb 22, 2023</time>
             </div>
         
 
@@ -266,54 +251,77 @@ https://minhamina.tistory.com/80
 담당자: TPoster
 상태: Done
 유형: 자료구조</p>
-<p>완전이진트리란?</p>
-<p><img src="/p/%EC%99%84%EC%A0%84-%EC%9D%B4%EC%A7%84%ED%8A%B8%EB%A6%AC-%EA%B5%AC%EC%A1%B0%EB%A5%BC-%EB%B0%B0%EC%97%B4%EB%A1%9C-%EC%96%B4%EB%96%BB%EA%B2%8C-%EA%B5%AC%ED%98%84%ED%95%A0-%EC%88%98-%EC%9E%88%EC%9D%84%EC%A7%80-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94./images/Screenshot_20230130_205217_Whale.jpg"
+<p>— 차이점</p>
+<p><img src="/p/%EB%B0%B0%EC%97%B4arraylist-%EA%B3%BC-%EB%A6%AC%EC%8A%A4%ED%8A%B8linkedlist-%EB%8A%94-%EC%96%B4%EB%96%A4-%EC%A0%90%EC%9D%B4-%EB%8B%A4%EB%A5%B8%EC%A7%80-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94/images/Screenshot_20230130_200405_Whale.jpg"
 	width="1080"
-	height="474"
-	srcset="/p/%EC%99%84%EC%A0%84-%EC%9D%B4%EC%A7%84%ED%8A%B8%EB%A6%AC-%EA%B5%AC%EC%A1%B0%EB%A5%BC-%EB%B0%B0%EC%97%B4%EB%A1%9C-%EC%96%B4%EB%96%BB%EA%B2%8C-%EA%B5%AC%ED%98%84%ED%95%A0-%EC%88%98-%EC%9E%88%EC%9D%84%EC%A7%80-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94./images/Screenshot_20230130_205217_Whale_hu5906e591e539aef33dcc328afc1b75b8_88710_480x0_resize_q75_box.jpg 480w, /p/%EC%99%84%EC%A0%84-%EC%9D%B4%EC%A7%84%ED%8A%B8%EB%A6%AC-%EA%B5%AC%EC%A1%B0%EB%A5%BC-%EB%B0%B0%EC%97%B4%EB%A1%9C-%EC%96%B4%EB%96%BB%EA%B2%8C-%EA%B5%AC%ED%98%84%ED%95%A0-%EC%88%98-%EC%9E%88%EC%9D%84%EC%A7%80-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94./images/Screenshot_20230130_205217_Whale_hu5906e591e539aef33dcc328afc1b75b8_88710_1024x0_resize_q75_box.jpg 1024w"
+	height="573"
+	srcset="/p/%EB%B0%B0%EC%97%B4arraylist-%EA%B3%BC-%EB%A6%AC%EC%8A%A4%ED%8A%B8linkedlist-%EB%8A%94-%EC%96%B4%EB%96%A4-%EC%A0%90%EC%9D%B4-%EB%8B%A4%EB%A5%B8%EC%A7%80-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94/images/Screenshot_20230130_200405_Whale_hu4dc01e1a335f41b9a2060fa2016b3ce6_121428_480x0_resize_q75_box.jpg 480w, /p/%EB%B0%B0%EC%97%B4arraylist-%EA%B3%BC-%EB%A6%AC%EC%8A%A4%ED%8A%B8linkedlist-%EB%8A%94-%EC%96%B4%EB%96%A4-%EC%A0%90%EC%9D%B4-%EB%8B%A4%EB%A5%B8%EC%A7%80-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94/images/Screenshot_20230130_200405_Whale_hu4dc01e1a335f41b9a2060fa2016b3ce6_121428_1024x0_resize_q75_box.jpg 1024w"
 	loading="lazy"
 	
-		alt="https://velog.io/@hanif/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0-%EC%9D%B4%EC%A7%84-%ED%8A%B8%EB%A6%AC"
+		alt="https://javagoal.com/difference-between-arraylist-and-linkedlist/"
 	
 	
 		class="gallery-image" 
-		data-flex-grow="227"
-		data-flex-basis="546px"
+		data-flex-grow="188"
+		data-flex-basis="452px"
 	
 ></p>
-<p><a class="link" href="https://velog.io/@hanif/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0-%EC%9D%B4%EC%A7%84-%ED%8A%B8%EB%A6%AC"  target="_blank" rel="noopener"
-    >https://velog.io/@hanif/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0-%EC%9D%B4%EC%A7%84-%ED%8A%B8%EB%A6%AC</a></p>
-<p>완전 : 마지막 레벨을 제외한 모든 레벨이 가득찼으며, 마지막 레벨은 왼쪽부터 채워지는</p>
-<p>이진 : 자식 노드의 개수가 최대 2개인</p>
-<p>트리 : 1개의 뿌리 노드에서 시작하여, 뿌리 노드를 제외한 모든 노드가 부모 노드를 갖는 그래프형 자료구조</p>
-<p>++ 그래프와 달리 사이클이 존재해서는 안된다.</p>
-<ul>
-<li>사이클 : 시작 노드에서 출발해 다른 노드를 거쳐서 다시 시작 노드로 돌아옴</li>
-</ul>
-<p>구현방식</p>
-<p><img src="/p/%EC%99%84%EC%A0%84-%EC%9D%B4%EC%A7%84%ED%8A%B8%EB%A6%AC-%EA%B5%AC%EC%A1%B0%EB%A5%BC-%EB%B0%B0%EC%97%B4%EB%A1%9C-%EC%96%B4%EB%96%BB%EA%B2%8C-%EA%B5%AC%ED%98%84%ED%95%A0-%EC%88%98-%EC%9E%88%EC%9D%84%EC%A7%80-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94./images/Screenshot_20230130_210357_Whale.jpg"
-	width="868"
-	height="700"
-	srcset="/p/%EC%99%84%EC%A0%84-%EC%9D%B4%EC%A7%84%ED%8A%B8%EB%A6%AC-%EA%B5%AC%EC%A1%B0%EB%A5%BC-%EB%B0%B0%EC%97%B4%EB%A1%9C-%EC%96%B4%EB%96%BB%EA%B2%8C-%EA%B5%AC%ED%98%84%ED%95%A0-%EC%88%98-%EC%9E%88%EC%9D%84%EC%A7%80-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94./images/Screenshot_20230130_210357_Whale_huf1bfd062c87cea01d527c4229b07eb07_45604_480x0_resize_q75_box.jpg 480w, /p/%EC%99%84%EC%A0%84-%EC%9D%B4%EC%A7%84%ED%8A%B8%EB%A6%AC-%EA%B5%AC%EC%A1%B0%EB%A5%BC-%EB%B0%B0%EC%97%B4%EB%A1%9C-%EC%96%B4%EB%96%BB%EA%B2%8C-%EA%B5%AC%ED%98%84%ED%95%A0-%EC%88%98-%EC%9E%88%EC%9D%84%EC%A7%80-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94./images/Screenshot_20230130_210357_Whale_huf1bfd062c87cea01d527c4229b07eb07_45604_1024x0_resize_q75_box.jpg 1024w"
+<p><a class="link" href="https://javagoal.com/difference-between-arraylist-and-linkedlist/"  target="_blank" rel="noopener"
+    >https://javagoal.com/difference-between-arraylist-and-linkedlist/</a></p>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>차이점</th>
+<th>ArrayList</th>
+<th>LinkedList</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>메모리상에서 데이터 분포</td>
+<td>연속적</td>
+<td>불규칙적</td>
+</tr>
+<tr>
+<td>기본 용량</td>
+<td>10 (에서 동적으로 변화)</td>
+<td>없음</td>
+</tr>
+<tr>
+<td>데이터 접근 방식</td>
+<td>인덱스로 임의접근 가능</td>
+<td>리스트 전체 순회</td>
+</tr>
+<tr>
+<td>데이터 구조</td>
+<td>인덱스에 값 저장</td>
+<td>노드에 이전/이후 노드 각각의 주소와 값 저장</td>
+</tr>
+<tr>
+<td>성능</td>
+<td>데이터 접근이 빠름 (인덱스 활용)</td>
+<td>데이터 추가/제거 작업이 빠름 (대상 노드를 가르키는 주소값만 수정)</td>
+</tr>
+</tbody>
+</table></div>
+<p>++ 공통점</p>
+<p><img src="/p/%EB%B0%B0%EC%97%B4arraylist-%EA%B3%BC-%EB%A6%AC%EC%8A%A4%ED%8A%B8linkedlist-%EB%8A%94-%EC%96%B4%EB%96%A4-%EC%A0%90%EC%9D%B4-%EB%8B%A4%EB%A5%B8%EC%A7%80-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94/images/Screenshot_20230130_200110_Whale.jpg"
+	width="1080"
+	height="244"
+	srcset="/p/%EB%B0%B0%EC%97%B4arraylist-%EA%B3%BC-%EB%A6%AC%EC%8A%A4%ED%8A%B8linkedlist-%EB%8A%94-%EC%96%B4%EB%96%A4-%EC%A0%90%EC%9D%B4-%EB%8B%A4%EB%A5%B8%EC%A7%80-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94/images/Screenshot_20230130_200110_Whale_hu4bb92a5ab956b645c45c187394b1ee9d_33543_480x0_resize_q75_box.jpg 480w, /p/%EB%B0%B0%EC%97%B4arraylist-%EA%B3%BC-%EB%A6%AC%EC%8A%A4%ED%8A%B8linkedlist-%EB%8A%94-%EC%96%B4%EB%96%A4-%EC%A0%90%EC%9D%B4-%EB%8B%A4%EB%A5%B8%EC%A7%80-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94/images/Screenshot_20230130_200110_Whale_hu4bb92a5ab956b645c45c187394b1ee9d_33543_1024x0_resize_q75_box.jpg 1024w"
 	loading="lazy"
 	
-		alt="https://minhamina.tistory.com/80"
+		alt="Screenshot_20230130_200110_Whale.jpg"
 	
 	
 		class="gallery-image" 
-		data-flex-grow="124"
-		data-flex-basis="297px"
+		data-flex-grow="442"
+		data-flex-basis="1062px"
 	
 ></p>
-<p><a class="link" href="https://minhamina.tistory.com/80"  target="_blank" rel="noopener"
-    >https://minhamina.tistory.com/80</a></p>
 <ul>
-<li>완전이진트리 내 각각의 노드에게 뿌리 노드부터 1씩 증가하는 인덱스를 부여한다.</li>
-<li>이들의 규칙성을 살펴보면, 2번째 노드의 인덱스가 2일때</li>
-<li>부모노드의 인덱스는 index / 2 인 1</li>
-<li>왼쪽 자식노드의 인덱스는 index * 2 인 4</li>
-<li>오른쪽 자식노드의 인덱스는 index * 2 + 1 인 5 임을 알 수 있다.</li>
-<li>이를 통해, 해당 노드의 인덱스에 따라 배열에 넣는다면 각 노드의 부모/자식노드에 비로 접근할 수 있는 트리구조를 배열로 구현할 수 있음을 알 수 있다.</li>
+<li>둘다 선형 자료구조임 (모든 데이터가 앞이나 뒤로 1:1 관계임)</li>
+<li>선언과 동시에 용량을 정해야하는 기존의 배열을 대체하기 위한 자료구조임</li>
 </ul>
 
 </section>
@@ -355,12 +363,12 @@ https://minhamina.tistory.com/80
             
                 
 <article class="">
-    <a href="/p/%EB%B0%B0%EC%97%B4arraylist-%EA%B3%BC-%EB%A6%AC%EC%8A%A4%ED%8A%B8linkedlist-%EB%8A%94-%EC%96%B4%EB%96%A4-%EC%A0%90%EC%9D%B4-%EB%8B%A4%EB%A5%B8%EC%A7%80-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94/">
+    <a href="/p/stack%EA%B3%BC-queue%EA%B0%80-%EC%96%B4%EB%96%BB%EA%B2%8C-%EB%8B%A4%EB%A5%B8%EC%A7%80-%ED%99%9C%EC%9A%A9-%EC%98%88%EC%8B%9C%EB%A5%BC-%ED%86%B5%ED%95%B4-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94./">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">배열(ArrayList) 과 리스트(LinkedList) 는 어떤 점이 다른지 설명해주세요</h2>
+            <h2 class="article-title">Stack과 Queue가 어떻게 다른지, 활용 예시를 통해 설명해주세요.</h2>
         </div>
     </a>
 </article>
@@ -368,12 +376,12 @@ https://minhamina.tistory.com/80
             
                 
 <article class="">
-    <a href="/p/stack%EA%B3%BC-queue%EA%B0%80-%EC%96%B4%EB%96%BB%EA%B2%8C-%EB%8B%A4%EB%A5%B8%EC%A7%80-%ED%99%9C%EC%9A%A9-%EC%98%88%EC%8B%9C%EB%A5%BC-%ED%86%B5%ED%95%B4-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94./">
+    <a href="/p/%EC%99%84%EC%A0%84-%EC%9D%B4%EC%A7%84%ED%8A%B8%EB%A6%AC-%EA%B5%AC%EC%A1%B0%EB%A5%BC-%EB%B0%B0%EC%97%B4%EB%A1%9C-%EC%96%B4%EB%96%BB%EA%B2%8C-%EA%B5%AC%ED%98%84%ED%95%A0-%EC%88%98-%EC%9E%88%EC%9D%84%EC%A7%80-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94./">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">Stack과 Queue가 어떻게 다른지, 활용 예시를 통해 설명해주세요.</h2>
+            <h2 class="article-title">완전 이진트리 구조를 배열로 어떻게 구현할 수 있을지 설명해주세요.</h2>
         </div>
     </a>
 </article>
