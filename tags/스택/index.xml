@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>스택 on SSAFY 서울 CS 스터디 블로그</title>
+        <link>https://SSAFY-Seoul-CS-Study.github.io/tags/%EC%8A%A4%ED%83%9D/</link>
+        <description>Recent content in 스택 on SSAFY 서울 CS 스터디 블로그</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en-us</language>
+        <lastBuildDate>Mon, 30 Jan 2023 22:00:50 +0900</lastBuildDate><atom:link href="https://SSAFY-Seoul-CS-Study.github.io/tags/%EC%8A%A4%ED%83%9D/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>스택(Stack) 과 큐(Queue) 가 어떻게 다른지, 활용 예시를 통해 설명해주세요</title>
+        <link>https://SSAFY-Seoul-CS-Study.github.io/p/%EC%8A%A4%ED%83%9Dstack-%EA%B3%BC-%ED%81%90queue-%EA%B0%80-%EC%96%B4%EB%96%BB%EA%B2%8C-%EB%8B%A4%EB%A5%B8%EC%A7%80-%ED%99%9C%EC%9A%A9-%EC%98%88%EC%8B%9C%EB%A5%BC-%ED%86%B5%ED%95%B4-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94/</link>
+        <pubDate>Mon, 30 Jan 2023 22:00:50 +0900</pubDate>
+        
+        <guid>https://SSAFY-Seoul-CS-Study.github.io/p/%EC%8A%A4%ED%83%9Dstack-%EA%B3%BC-%ED%81%90queue-%EA%B0%80-%EC%96%B4%EB%96%BB%EA%B2%8C-%EB%8B%A4%EB%A5%B8%EC%A7%80-%ED%99%9C%EC%9A%A9-%EC%98%88%EC%8B%9C%EB%A5%BC-%ED%86%B5%ED%95%B4-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94/</guid>
+        <description>&lt;p&gt;&lt;img src=&#34;https://SSAFY-Seoul-CS-Study.github.io/p/%EC%8A%A4%ED%83%9Dstack-%EA%B3%BC-%ED%81%90queue-%EA%B0%80-%EC%96%B4%EB%96%BB%EA%B2%8C-%EB%8B%A4%EB%A5%B8%EC%A7%80-%ED%99%9C%EC%9A%A9-%EC%98%88%EC%8B%9C%EB%A5%BC-%ED%86%B5%ED%95%B4-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94/images/Screenshot_20230130_204340_Whale.jpg&#34;
+	width=&#34;1080&#34;
+	height=&#34;449&#34;
+	srcset=&#34;https://SSAFY-Seoul-CS-Study.github.io/p/%EC%8A%A4%ED%83%9Dstack-%EA%B3%BC-%ED%81%90queue-%EA%B0%80-%EC%96%B4%EB%96%BB%EA%B2%8C-%EB%8B%A4%EB%A5%B8%EC%A7%80-%ED%99%9C%EC%9A%A9-%EC%98%88%EC%8B%9C%EB%A5%BC-%ED%86%B5%ED%95%B4-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94/images/Screenshot_20230130_204340_Whale_hua54b9cb8fbe8ff069fdb2f99fa004221_75625_480x0_resize_q75_box.jpg 480w, https://SSAFY-Seoul-CS-Study.github.io/p/%EC%8A%A4%ED%83%9Dstack-%EA%B3%BC-%ED%81%90queue-%EA%B0%80-%EC%96%B4%EB%96%BB%EA%B2%8C-%EB%8B%A4%EB%A5%B8%EC%A7%80-%ED%99%9C%EC%9A%A9-%EC%98%88%EC%8B%9C%EB%A5%BC-%ED%86%B5%ED%95%B4-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94/images/Screenshot_20230130_204340_Whale_hua54b9cb8fbe8ff069fdb2f99fa004221_75625_1024x0_resize_q75_box.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;https://velog.io/@sparklingwater/JavaScript-Data-Structures-Stack-vs-Queue&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;240&#34;
+		data-flex-basis=&#34;577px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;h2 id=&#34;기본-개념&#34;&gt;기본 개념&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;스택(Stack) : 가장 마지막으로 들어간 데이터가 가장 첫 번째로 나오는 성질을 가진 자료 구조 (LIFO)&lt;/li&gt;
+&lt;li&gt;큐(Queue) : 먼저 들어간 데이터가 먼저 나오는 성질을 가진 자료 구조 (FIFO)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;스택과-큐의-차이점&#34;&gt;스택과 큐의 차이점&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;차이점&lt;/th&gt;
+&lt;th&gt;스택&lt;/th&gt;
+&lt;th&gt;큐&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;활용 예시&lt;/td&gt;
+&lt;td&gt;웹페이지 뒤로가기, 실행취소, 프로그램 내 함수 호출 등 후입선출 방식의 작업들&lt;/td&gt;
+&lt;td&gt;프로세스 대기열 관리, 게임 매칭 대기열 등 선입선출 방식의 작업들&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;삽입, 삭제 위치&lt;/td&gt;
+&lt;td&gt;일치 (top)&lt;/td&gt;
+&lt;td&gt;불일치 (삭제 : front, 삽입 : rear)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;데이터 조작을 고려한 최적의 구현방법&lt;/td&gt;
+&lt;td&gt;ArrayList 를 활용 - 데이터를 삭제할 때 객체를 제거할 필요가 없음&lt;/td&gt;
+&lt;td&gt;LinkedList 를 활용 - 데이터를 삭제할 때, 모든 데이터를 한칸씩 앞당길 필요가 없음&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>

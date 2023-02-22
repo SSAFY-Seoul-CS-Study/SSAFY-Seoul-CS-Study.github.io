@@ -5,6 +5,23 @@
         <link>https://SSAFY-Seoul-CS-Study.github.io/categories/</link>
         <description>Recent content in Categories on SSAFY 서울 CS 스터디 블로그</description>
         <generator>Hugo -- gohugo.io</generator>
-        <language>en-us</language><atom:link href="https://SSAFY-Seoul-CS-Study.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+        <language>en-us</language>
+        <lastBuildDate>Mon, 30 Jan 2023 22:01:05 +0900</lastBuildDate><atom:link href="https://SSAFY-Seoul-CS-Study.github.io/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>자료구조</title>
+        <link>https://SSAFY-Seoul-CS-Study.github.io/categories/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/</link>
+        <pubDate>Mon, 30 Jan 2023 22:01:05 +0900</pubDate>
+        
+        <guid>https://SSAFY-Seoul-CS-Study.github.io/categories/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>공지사항</title>
+        <link>https://SSAFY-Seoul-CS-Study.github.io/categories/%EA%B3%B5%EC%A7%80%EC%82%AC%ED%95%AD/</link>
+        <pubDate>Mon, 30 Jan 2023 00:17:42 +0900</pubDate>
+        
+        <guid>https://SSAFY-Seoul-CS-Study.github.io/categories/%EA%B3%B5%EC%A7%80%EC%82%AC%ED%95%AD/</guid>
+        <description></description>
+        </item>
+        
     </channel>
 </rss>

@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='날짜: 2023/02/04 담당자: TPoster 상태: Done 유형: 자료구조
+Heap : 우선순위 큐를 구현하기 위해 만들어진 완전 이진 트리형 자료구조
+추가된 값들 중에서 최댓값이나 최솟값을 빠르게 찾을 수 있음 이진 탐색 트리와 달리 느슨한 반정렬 상태를 유지함 또한 중복된 값의 추가를 허용함 배열과 리스트에 비해 평균적으로 더 나은 효율을 보여줌 https://gmlwjd9405.github.io/2018/05/10/data-structure-heap.html
+종류 https://gmlwjd9405.github.io/2018/05/10/data-structure-heap.html
+최소 힙 (부모노드 ≤ 자식노드 &amp;amp;&amp;amp; 루트노드 == MAX) 최대 힙 (부모노드 ≥ 자식노드 &amp;amp;&amp;amp; 루트노드 == MAX) 동작방식 1.'>
+<title>힙(Heap)의 동작방식과 시간복잡도를 설명해주세요</title>
+
+<link rel='canonical' href='https://SSAFY-Seoul-CS-Study.github.io/p/%ED%9E%99heap%EC%9D%98-%EB%8F%99%EC%9E%91%EB%B0%A9%EC%8B%9D%EA%B3%BC-%EC%8B%9C%EA%B0%84%EB%B3%B5%EC%9E%A1%EB%8F%84%EB%A5%BC-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94/'>
+
+<link rel="stylesheet" href="/scss/style.min.8191399262444ab68b72a18c97392f5349be20a1615d77445be51e974c144cff.css"><meta property='og:title' content='힙(Heap)의 동작방식과 시간복잡도를 설명해주세요'>
+<meta property='og:description' content='날짜: 2023/02/04 담당자: TPoster 상태: Done 유형: 자료구조
+Heap : 우선순위 큐를 구현하기 위해 만들어진 완전 이진 트리형 자료구조
+추가된 값들 중에서 최댓값이나 최솟값을 빠르게 찾을 수 있음 이진 탐색 트리와 달리 느슨한 반정렬 상태를 유지함 또한 중복된 값의 추가를 허용함 배열과 리스트에 비해 평균적으로 더 나은 효율을 보여줌 https://gmlwjd9405.github.io/2018/05/10/data-structure-heap.html
+종류 https://gmlwjd9405.github.io/2018/05/10/data-structure-heap.html
+최소 힙 (부모노드 ≤ 자식노드 &amp;amp;&amp;amp; 루트노드 == MAX) 최대 힙 (부모노드 ≥ 자식노드 &amp;amp;&amp;amp; 루트노드 == MAX) 동작방식 1.'>
+<meta property='og:url' content='https://SSAFY-Seoul-CS-Study.github.io/p/%ED%9E%99heap%EC%9D%98-%EB%8F%99%EC%9E%91%EB%B0%A9%EC%8B%9D%EA%B3%BC-%EC%8B%9C%EA%B0%84%EB%B3%B5%EC%9E%A1%EB%8F%84%EB%A5%BC-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94/'>
+<meta property='og:site_name' content='SSAFY 서울 CS 스터디 블로그'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='' /><meta property='article:published_time' content='2023-02-22T23:29:59&#43;09:00'/><meta property='article:modified_time' content='2023-02-22T23:29:59&#43;09:00'/>
+<meta name="twitter:title" content="힙(Heap)의 동작방식과 시간복잡도를 설명해주세요">
+<meta name="twitter:description" content="날짜: 2023/02/04 담당자: TPoster 상태: Done 유형: 자료구조
+Heap : 우선순위 큐를 구현하기 위해 만들어진 완전 이진 트리형 자료구조
+추가된 값들 중에서 최댓값이나 최솟값을 빠르게 찾을 수 있음 이진 탐색 트리와 달리 느슨한 반정렬 상태를 유지함 또한 중복된 값의 추가를 허용함 배열과 리스트에 비해 평균적으로 더 나은 효율을 보여줌 https://gmlwjd9405.github.io/2018/05/10/data-structure-heap.html
+종류 https://gmlwjd9405.github.io/2018/05/10/data-structure-heap.html
+최소 힙 (부모노드 ≤ 자식노드 &amp;amp;&amp;amp; 루트노드 == MAX) 최대 힙 (부모노드 ≥ 자식노드 &amp;amp;&amp;amp; 루트노드 == MAX) 동작방식 1.">
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="메뉴 여닫기">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/Study_Logo_huf1efc18f0a396c65cea4194987c964ea_10156_300x0_resize_box_3.png" width="300"
+                            height="298" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">✏️</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">SSAFY 서울 CS 스터디 블로그</a></h1>
+            <h2 class="site-description">CS 기술면접을 대비합니다!</h2>
+        </div>
+    </header><ol class="social-menu">
+            
+                <li>
+                    <a 
+                        href='https://github.com/SSAFY-Seoul-CS-Study/blog'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://twitter.com'
+                        target="_blank"
+                        title="Twitter"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+
+        <div class="menu-bottom-section">
+                <li id="i18n-switch">  
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                    <select name="language" onchange="window.location.href = this.selectedOptions[0].value">
+                        
+                            <option value="https://SSAFY-Seoul-CS-Study.github.io/" selected>한글</option>
+                        
+                            <option value="https://SSAFY-Seoul-CS-Study.github.io/en/" >English</option>
+                        
+                    </select>
+                </li>
+            
+            
+            
+                <li id="dark-mode-toggle">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <span>다크 모드</span>
+                </li>
+            
+        </div>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">목차</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#heap"><em><strong>Heap</strong></em></a></li>
+    <li><a href="#종류"><strong>종류</strong></a></li>
+    <li><a href="#동작방식">동작방식</a>
+      <ol>
+        <li><a href="#1-데이터의-추가">1. 데이터의 추가</a></li>
+        <li><a href="#데이터의-삭제">데이터의 삭제</a></li>
+      </ol>
+    </li>
+    <li><a href="#추가-구현방법">추가) 구현방법</a></li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/%ED%9E%99heap%EC%9D%98-%EB%8F%99%EC%9E%91%EB%B0%A9%EC%8B%9D%EA%B3%BC-%EC%8B%9C%EA%B0%84%EB%B3%B5%EC%9E%A1%EB%8F%84%EB%A5%BC-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94/">힙(Heap)의 동작방식과 시간복잡도를 설명해주세요</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Feb 22, 2023</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    2 분 정도
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <p>날짜: 2023/02/04
+담당자: TPoster
+상태: Done
+유형: 자료구조</p>
+<h2 id="heap"><em><strong>Heap</strong></em></h2>
+<p>: 우선순위 큐를 구현하기 위해 만들어진 완전 이진 트리형 자료구조</p>
+<ul>
+<li>추가된 값들 중에서 최댓값이나 최솟값을 빠르게 찾을 수 있음</li>
+<li>이진 탐색 트리와 달리 느슨한 반정렬 상태를 유지함</li>
+<li>또한 중복된 값의 추가를 허용함</li>
+<li>배열과 리스트에 비해 평균적으로 더 나은 효율을 보여줌</li>
+</ul>
+<p><img src="/p/%ED%9E%99heap%EC%9D%98-%EB%8F%99%EC%9E%91%EB%B0%A9%EC%8B%9D%EA%B3%BC-%EC%8B%9C%EA%B0%84%EB%B3%B5%EC%9E%A1%EB%8F%84%EB%A5%BC-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94/images/Untitled.png"
+	width="392"
+	height="167"
+	srcset="/p/%ED%9E%99heap%EC%9D%98-%EB%8F%99%EC%9E%91%EB%B0%A9%EC%8B%9D%EA%B3%BC-%EC%8B%9C%EA%B0%84%EB%B3%B5%EC%9E%A1%EB%8F%84%EB%A5%BC-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94/images/Untitled_hub6a28ef043ffaa807b02b462e7d09758_18698_480x0_resize_box_3.png 480w, /p/%ED%9E%99heap%EC%9D%98-%EB%8F%99%EC%9E%91%EB%B0%A9%EC%8B%9D%EA%B3%BC-%EC%8B%9C%EA%B0%84%EB%B3%B5%EC%9E%A1%EB%8F%84%EB%A5%BC-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94/images/Untitled_hub6a28ef043ffaa807b02b462e7d09758_18698_1024x0_resize_box_3.png 1024w"
+	loading="lazy"
+	
+		alt="https://gmlwjd9405.github.io/2018/05/10/data-structure-heap.html"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="234"
+		data-flex-basis="563px"
+	
+></p>
+<p><a class="link" href="https://gmlwjd9405.github.io/2018/05/10/data-structure-heap.html"  target="_blank" rel="noopener"
+    >https://gmlwjd9405.github.io/2018/05/10/data-structure-heap.html</a></p>
+<h2 id="종류"><strong>종류</strong></h2>
+<p><img src="/images/Untitled%201.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="https://gmlwjd9405.github.io/2018/05/10/data-structure-heap.html"
+	
+	
+></p>
+<p><a class="link" href="https://gmlwjd9405.github.io/2018/05/10/data-structure-heap.html"  target="_blank" rel="noopener"
+    >https://gmlwjd9405.github.io/2018/05/10/data-structure-heap.html</a></p>
+<ul>
+<li>최소 힙 (부모노드 ≤ 자식노드 &amp;&amp; 루트노드 == MAX)</li>
+<li>최대 힙 (부모노드 ≥ 자식노드 &amp;&amp; 루트노드 == MAX)</li>
+</ul>
+<h2 id="동작방식">동작방식</h2>
+<h3 id="1-데이터의-추가">1. 데이터의 추가</h3>
+<p><img src="/images/Untitled%202.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="https://gmlwjd9405.github.io/2018/05/10/data-structure-heap.html"
+	
+	
+></p>
+<p><a class="link" href="https://gmlwjd9405.github.io/2018/05/10/data-structure-heap.html"  target="_blank" rel="noopener"
+    >https://gmlwjd9405.github.io/2018/05/10/data-structure-heap.html</a></p>
+<ol>
+<li>인덱스를 2로 나눈 값의 노드와 비교 (부모노드와 비교)</li>
+<li>루트 노드까지 비교하는 경우, 시간 복잡도가 log(n)으로 최대이다.</li>
+</ol>
+<h3 id="데이터의-삭제">데이터의 삭제</h3>
+<p><img src="/images/Untitled%203.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="https://gmlwjd9405.github.io/2018/05/10/data-structure-heap.html"
+	
+	
+></p>
+<p><a class="link" href="https://gmlwjd9405.github.io/2018/05/10/data-structure-heap.html"  target="_blank" rel="noopener"
+    >https://gmlwjd9405.github.io/2018/05/10/data-structure-heap.html</a></p>
+<ol>
+<li>삭제 시 인덱스가 가장 높은 값이 루트노드를 대체</li>
+<li>이후 자식 노드들과 비교하며 큰 값과 자리를 교환한다.</li>
+<li>가장 아래까지 내려가는 경우 시간 복잡도가 log(n)으로 최대이다.</li>
+<li>힙은 우선순위 큐를 토대로 한 자료구조이므로 중간값 삭제 및 추가는 고려하지 않는다.</li>
+</ol>
+<h2 id="추가-구현방법">추가) 구현방법</h2>
+<p>: 완전 이진 트리를 기반으로 하므로, 배열 상에서 구현이 가능하다.</p>
+<ul>
+<li>
+<p>JAVA로 구현한 코드</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="cm">/* 최대힙 삽입 */</span>
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">insert_max_heap</span><span class="o">(</span><span class="kt">int</span> <span class="n">x</span><span class="o">){</span>
+</span></span><span class="line"><span class="cl">	<span class="n">maxHeap</span><span class="o">[++</span><span class="n">heapSize</span><span class="o">]</span> <span class="o">=</span> <span class="n">x</span><span class="o">;</span> <span class="c1">// 힙 크기를 하나 증가하고 마지막 노드에 x를 넣는다.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">	<span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="n">heapSize</span><span class="o">;</span> <span class="n">i</span><span class="o">&gt;</span><span class="n">1</span><span class="o">;</span> <span class="n">i</span><span class="o">/=</span><span class="n">2</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">	  <span class="c1">// 마지막 노드가 자신의 부모 노드보다 크면 swap
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	  <span class="k">if</span> <span class="o">(</span><span class="n">maxHeap</span><span class="o">[</span><span class="n">i</span><span class="o">/</span><span class="n">2</span><span class="o">]</span> <span class="o">&lt;</span> <span class="n">maxHeap</span><span class="o">[</span><span class="n">i</span><span class="o">])</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">	    <span class="n">swap</span><span class="o">(</span><span class="n">i</span><span class="o">/</span><span class="n">2</span><span class="o">,</span> <span class="n">i</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">	  <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">	    <span class="k">break</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">	  <span class="o">}</span>
+</span></span><span class="line"><span class="cl">	<span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="cm">/* 최대힙 삭제 */</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">delete_max_heap</span><span class="o">(){</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="o">(</span><span class="n">heapSize</span> <span class="o">==</span> <span class="n">0</span><span class="o">)</span> <span class="c1">// 배열이 빈 경우
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	  <span class="k">return</span> <span class="n">0</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="kt">int</span> <span class="n">item</span> <span class="o">=</span> <span class="n">maxHeap</span><span class="o">[</span><span class="n">1</span><span class="o">];</span> <span class="c1">// 루트 노드의 값을 저장한다.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="n">maxHeap</span><span class="o">[</span><span class="n">1</span><span class="o">]</span> <span class="o">=</span> <span class="n">maxHeap</span><span class="o">[</span><span class="n">heapSize</span><span class="o">];</span> <span class="c1">// 마지막 노드의 값을 루트 노드에 둔다.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="n">maxHeap</span><span class="o">[</span><span class="n">heapSize</span><span class="o">--]</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span> <span class="c1">// 힙 크기를 하나 줄이고 마지막 노드를 0으로 초기화한다.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">	<span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="n">1</span><span class="o">;</span> <span class="n">i</span><span class="o">*</span><span class="n">2</span><span class="o">&lt;=</span><span class="n">heapSize</span><span class="o">;)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">	  <span class="c1">// 마지막 노드가 왼쪽 노드와 오른쪽 노드보다 크면 반복문을 나간다.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	  <span class="k">if</span> <span class="o">(</span><span class="n">maxHeap</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">&gt;</span> <span class="n">maxHeap</span><span class="o">[</span><span class="n">i</span><span class="o">*</span><span class="n">2</span><span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="n">maxHeap</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">&gt;</span> <span class="n">maxHeap</span><span class="o">[</span><span class="n">i</span><span class="o">*</span><span class="n">2</span><span class="o">+</span><span class="n">1</span><span class="o">])</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">	    <span class="k">break</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">	  <span class="o">}</span>
+</span></span><span class="line"><span class="cl">	  <span class="c1">// 왼쪽 노드가 더 큰 경우, 왼쪽 노드와 마지막 노드를 swap
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	  <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">maxHeap</span><span class="o">[</span><span class="n">i</span><span class="o">*</span><span class="n">2</span><span class="o">]</span> <span class="o">&gt;</span> <span class="n">maxHeap</span><span class="o">[</span><span class="n">i</span><span class="o">*</span><span class="n">2</span><span class="o">+</span><span class="n">1</span><span class="o">])</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">	    <span class="n">swap</span><span class="o">(</span><span class="n">i</span><span class="o">,</span> <span class="n">i</span><span class="o">*</span><span class="n">2</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">	    <span class="n">i</span> <span class="o">=</span> <span class="n">i</span><span class="o">*</span><span class="n">2</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">	  <span class="o">}</span>
+</span></span><span class="line"><span class="cl">	  <span class="c1">// 오른쪽 노드가 더 큰 경우, 오른쪽 노드와 마지막 노드를 swap
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	  <span class="k">else</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">	    <span class="n">swap</span><span class="o">(</span><span class="n">i</span><span class="o">,</span> <span class="n">i</span><span class="o">*</span><span class="n">2</span><span class="o">+</span><span class="n">1</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">	    <span class="n">i</span> <span class="o">=</span> <span class="n">i</span><span class="o">*</span><span class="n">2</span><span class="o">+</span><span class="n">1</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">	  <span class="o">}</span>
+</span></span><span class="line"><span class="cl">	<span class="o">}</span>
+</span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="n">item</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">	<span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">관련 글</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="">
+    <a href="/p/b%ED%8A%B8%EB%A6%ACb-tree-%EC%99%80-b-%ED%8A%B8%EB%A6%ACb-tree-%EC%9D%98-%EC%B0%A8%EC%9D%B4%EC%A0%90%EC%9D%84-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">B트리(B Tree) 와 B&#43;트리(B&#43; Tree) 의 차이점을 설명해주세요</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    <div class="disqus-container">
+    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "hugo-theme-stack" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+<style>
+    .disqus-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+    }
+</style>
+
+<script>
+    window.addEventListener('onColorSchemeChange', (e) => {
+        if (typeof DISQUS == 'object') {
+            DISQUS.reset({
+                reload: true
+            });
+        }
+    })
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+        2023 SSAFY 서울 CS 스터디 블로그
+    </section>
+    
+    <section class="powerby">
+        <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a>로 만듦 <br />
+        <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>의 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.16.0">Stack</a></b> 테마 사용 중
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>배열 on SSAFY 서울 CS 스터디 블로그</title>
+        <link>https://SSAFY-Seoul-CS-Study.github.io/tags/%EB%B0%B0%EC%97%B4/</link>
+        <description>Recent content in 배열 on SSAFY 서울 CS 스터디 블로그</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en-us</language>
+        <lastBuildDate>Mon, 30 Jan 2023 22:01:05 +0900</lastBuildDate><atom:link href="https://SSAFY-Seoul-CS-Study.github.io/tags/%EB%B0%B0%EC%97%B4/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>완전 이진트리 구조를 배열로 어떻게 구현할 수 있을지 설명해주세요</title>
+        <link>https://SSAFY-Seoul-CS-Study.github.io/p/%EC%99%84%EC%A0%84-%EC%9D%B4%EC%A7%84%ED%8A%B8%EB%A6%AC-%EA%B5%AC%EC%A1%B0%EB%A5%BC-%EB%B0%B0%EC%97%B4%EB%A1%9C-%EC%96%B4%EB%96%BB%EA%B2%8C-%EA%B5%AC%ED%98%84%ED%95%A0-%EC%88%98-%EC%9E%88%EC%9D%84%EC%A7%80-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94/</link>
+        <pubDate>Mon, 30 Jan 2023 22:01:05 +0900</pubDate>
+        
+        <guid>https://SSAFY-Seoul-CS-Study.github.io/p/%EC%99%84%EC%A0%84-%EC%9D%B4%EC%A7%84%ED%8A%B8%EB%A6%AC-%EA%B5%AC%EC%A1%B0%EB%A5%BC-%EB%B0%B0%EC%97%B4%EB%A1%9C-%EC%96%B4%EB%96%BB%EA%B2%8C-%EA%B5%AC%ED%98%84%ED%95%A0-%EC%88%98-%EC%9E%88%EC%9D%84%EC%A7%80-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94/</guid>
+        <description>&lt;h2 id=&#34;완전이진트리란&#34;&gt;완전이진트리란?&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;https://SSAFY-Seoul-CS-Study.github.io/p/%EC%99%84%EC%A0%84-%EC%9D%B4%EC%A7%84%ED%8A%B8%EB%A6%AC-%EA%B5%AC%EC%A1%B0%EB%A5%BC-%EB%B0%B0%EC%97%B4%EB%A1%9C-%EC%96%B4%EB%96%BB%EA%B2%8C-%EA%B5%AC%ED%98%84%ED%95%A0-%EC%88%98-%EC%9E%88%EC%9D%84%EC%A7%80-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94/images/Screenshot_20230130_205217_Whale.jpg&#34;
+	width=&#34;1080&#34;
+	height=&#34;474&#34;
+	srcset=&#34;https://SSAFY-Seoul-CS-Study.github.io/p/%EC%99%84%EC%A0%84-%EC%9D%B4%EC%A7%84%ED%8A%B8%EB%A6%AC-%EA%B5%AC%EC%A1%B0%EB%A5%BC-%EB%B0%B0%EC%97%B4%EB%A1%9C-%EC%96%B4%EB%96%BB%EA%B2%8C-%EA%B5%AC%ED%98%84%ED%95%A0-%EC%88%98-%EC%9E%88%EC%9D%84%EC%A7%80-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94/images/Screenshot_20230130_205217_Whale_hu5906e591e539aef33dcc328afc1b75b8_88710_480x0_resize_q75_box.jpg 480w, https://SSAFY-Seoul-CS-Study.github.io/p/%EC%99%84%EC%A0%84-%EC%9D%B4%EC%A7%84%ED%8A%B8%EB%A6%AC-%EA%B5%AC%EC%A1%B0%EB%A5%BC-%EB%B0%B0%EC%97%B4%EB%A1%9C-%EC%96%B4%EB%96%BB%EA%B2%8C-%EA%B5%AC%ED%98%84%ED%95%A0-%EC%88%98-%EC%9E%88%EC%9D%84%EC%A7%80-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94/images/Screenshot_20230130_205217_Whale_hu5906e591e539aef33dcc328afc1b75b8_88710_1024x0_resize_q75_box.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;https://velog.io/@hanif/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0-%EC%9D%B4%EC%A7%84-%ED%8A%B8%EB%A6%AC&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;227&#34;
+		data-flex-basis=&#34;546px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;완전 : 마지막 레벨을 제외한 모든 레벨이 가득찼으며, 마지막 레벨은 왼쪽부터 채워지는&lt;/p&gt;
+&lt;p&gt;이진 : 자식 노드의 개수가 최대 2개인&lt;/p&gt;
+&lt;p&gt;트리 : 1개의 뿌리 노드에서 시작하여, 뿌리 노드를 제외한 모든 노드가 부모 노드를 갖는 그래프형 자료구조&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;그래프와 달리 사이클이 존재해서는 안된다.&lt;br&gt;
+사이클 : 시작 노드에서 출발해 다른 노드를 거쳐서 다시 시작 노드로 돌아오는 경로가 존재함&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;배열-위에-구현하기&#34;&gt;배열 위에 구현하기&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;https://SSAFY-Seoul-CS-Study.github.io/p/%EC%99%84%EC%A0%84-%EC%9D%B4%EC%A7%84%ED%8A%B8%EB%A6%AC-%EA%B5%AC%EC%A1%B0%EB%A5%BC-%EB%B0%B0%EC%97%B4%EB%A1%9C-%EC%96%B4%EB%96%BB%EA%B2%8C-%EA%B5%AC%ED%98%84%ED%95%A0-%EC%88%98-%EC%9E%88%EC%9D%84%EC%A7%80-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94/images/Screenshot_20230130_210357_Whale.jpg&#34;
+	width=&#34;868&#34;
+	height=&#34;700&#34;
+	srcset=&#34;https://SSAFY-Seoul-CS-Study.github.io/p/%EC%99%84%EC%A0%84-%EC%9D%B4%EC%A7%84%ED%8A%B8%EB%A6%AC-%EA%B5%AC%EC%A1%B0%EB%A5%BC-%EB%B0%B0%EC%97%B4%EB%A1%9C-%EC%96%B4%EB%96%BB%EA%B2%8C-%EA%B5%AC%ED%98%84%ED%95%A0-%EC%88%98-%EC%9E%88%EC%9D%84%EC%A7%80-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94/images/Screenshot_20230130_210357_Whale_huf1bfd062c87cea01d527c4229b07eb07_45604_480x0_resize_q75_box.jpg 480w, https://SSAFY-Seoul-CS-Study.github.io/p/%EC%99%84%EC%A0%84-%EC%9D%B4%EC%A7%84%ED%8A%B8%EB%A6%AC-%EA%B5%AC%EC%A1%B0%EB%A5%BC-%EB%B0%B0%EC%97%B4%EB%A1%9C-%EC%96%B4%EB%96%BB%EA%B2%8C-%EA%B5%AC%ED%98%84%ED%95%A0-%EC%88%98-%EC%9E%88%EC%9D%84%EC%A7%80-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94/images/Screenshot_20230130_210357_Whale_huf1bfd062c87cea01d527c4229b07eb07_45604_1024x0_resize_q75_box.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;https://minhamina.tistory.com/80&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;124&#34;
+		data-flex-basis=&#34;297px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;1.  완전이진트리 내 각각의 노드에게 뿌리 노드부터 1씩 증가하는 인덱스를 부여한다.&lt;br&gt;
+2.  이들의 규칙성을 살펴보면, 2번째 노드의 인덱스가 2일때&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;부모노드의 인덱스는 index / 2 인 1&lt;/li&gt;
+&lt;li&gt;왼쪽 자식노드의 인덱스는 index * 2 인 4&lt;/li&gt;
+&lt;li&gt;오른쪽 자식노드의 인덱스는 index * 2 + 1 인 5 임을 알 수 있다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;3.  이를 통해, 해당 노드의 인덱스에 따라 배열에 넣는다면 각 노드의 부모/자식노드에 비로 접근할 수 있는 트리구조를 배열로 구현할 수 있음을 알 수 있다.&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>배열(ArrayList) 과 리스트(LinkedList) 는 어떤 점이 다른지 설명해주세요</title>
+        <link>https://SSAFY-Seoul-CS-Study.github.io/p/%EB%B0%B0%EC%97%B4arraylist-%EA%B3%BC-%EB%A6%AC%EC%8A%A4%ED%8A%B8linkedlist-%EB%8A%94-%EC%96%B4%EB%96%A4-%EC%A0%90%EC%9D%B4-%EB%8B%A4%EB%A5%B8%EC%A7%80-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94/</link>
+        <pubDate>Mon, 30 Jan 2023 21:58:41 +0900</pubDate>
+        
+        <guid>https://SSAFY-Seoul-CS-Study.github.io/p/%EB%B0%B0%EC%97%B4arraylist-%EA%B3%BC-%EB%A6%AC%EC%8A%A4%ED%8A%B8linkedlist-%EB%8A%94-%EC%96%B4%EB%96%A4-%EC%A0%90%EC%9D%B4-%EB%8B%A4%EB%A5%B8%EC%A7%80-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94/</guid>
+        <description>&lt;h2 id=&#34;배열과-리스트의-차이점&#34;&gt;배열과 리스트의 차이점&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;https://SSAFY-Seoul-CS-Study.github.io/p/%EB%B0%B0%EC%97%B4arraylist-%EA%B3%BC-%EB%A6%AC%EC%8A%A4%ED%8A%B8linkedlist-%EB%8A%94-%EC%96%B4%EB%96%A4-%EC%A0%90%EC%9D%B4-%EB%8B%A4%EB%A5%B8%EC%A7%80-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94/images/Screenshot_20230130_200405_Whale.jpg&#34;
+	width=&#34;1080&#34;
+	height=&#34;573&#34;
+	srcset=&#34;https://SSAFY-Seoul-CS-Study.github.io/p/%EB%B0%B0%EC%97%B4arraylist-%EA%B3%BC-%EB%A6%AC%EC%8A%A4%ED%8A%B8linkedlist-%EB%8A%94-%EC%96%B4%EB%96%A4-%EC%A0%90%EC%9D%B4-%EB%8B%A4%EB%A5%B8%EC%A7%80-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94/images/Screenshot_20230130_200405_Whale_hu4dc01e1a335f41b9a2060fa2016b3ce6_121428_480x0_resize_q75_box.jpg 480w, https://SSAFY-Seoul-CS-Study.github.io/p/%EB%B0%B0%EC%97%B4arraylist-%EA%B3%BC-%EB%A6%AC%EC%8A%A4%ED%8A%B8linkedlist-%EB%8A%94-%EC%96%B4%EB%96%A4-%EC%A0%90%EC%9D%B4-%EB%8B%A4%EB%A5%B8%EC%A7%80-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94/images/Screenshot_20230130_200405_Whale_hu4dc01e1a335f41b9a2060fa2016b3ce6_121428_1024x0_resize_q75_box.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;https://javagoal.com/difference-between-arraylist-and-linkedlist/&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;188&#34;
+		data-flex-basis=&#34;452px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;차이점&lt;/th&gt;
+&lt;th&gt;ArrayList&lt;/th&gt;
+&lt;th&gt;LinkedList&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;메모리상에서 데이터 분포&lt;/td&gt;
+&lt;td&gt;연속적&lt;/td&gt;
+&lt;td&gt;불규칙적&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;기본 용량&lt;/td&gt;
+&lt;td&gt;10 (에서 동적으로 변화)&lt;/td&gt;
+&lt;td&gt;없음&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;데이터 접근 방식&lt;/td&gt;
+&lt;td&gt;인덱스로 임의접근 가능&lt;/td&gt;
+&lt;td&gt;리스트 전체 순회&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;데이터 구조&lt;/td&gt;
+&lt;td&gt;인덱스에 값 저장&lt;/td&gt;
+&lt;td&gt;노드에 이전/이후 노드 각각의 주소와 값 저장&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;성능&lt;/td&gt;
+&lt;td&gt;데이터 접근이 빠름 (인덱스 활용)&lt;/td&gt;
+&lt;td&gt;데이터 추가/제거 작업이 빠름 (대상 노드를 가르키는 주소값만 수정)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;배열과-리스트의-공통점&#34;&gt;배열과 리스트의 공통점&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;https://SSAFY-Seoul-CS-Study.github.io/p/%EB%B0%B0%EC%97%B4arraylist-%EA%B3%BC-%EB%A6%AC%EC%8A%A4%ED%8A%B8linkedlist-%EB%8A%94-%EC%96%B4%EB%96%A4-%EC%A0%90%EC%9D%B4-%EB%8B%A4%EB%A5%B8%EC%A7%80-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94/images/Screenshot_20230130_200110_Whale.jpg&#34;
+	width=&#34;1080&#34;
+	height=&#34;244&#34;
+	srcset=&#34;https://SSAFY-Seoul-CS-Study.github.io/p/%EB%B0%B0%EC%97%B4arraylist-%EA%B3%BC-%EB%A6%AC%EC%8A%A4%ED%8A%B8linkedlist-%EB%8A%94-%EC%96%B4%EB%96%A4-%EC%A0%90%EC%9D%B4-%EB%8B%A4%EB%A5%B8%EC%A7%80-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94/images/Screenshot_20230130_200110_Whale_hu4bb92a5ab956b645c45c187394b1ee9d_33543_480x0_resize_q75_box.jpg 480w, https://SSAFY-Seoul-CS-Study.github.io/p/%EB%B0%B0%EC%97%B4arraylist-%EA%B3%BC-%EB%A6%AC%EC%8A%A4%ED%8A%B8linkedlist-%EB%8A%94-%EC%96%B4%EB%96%A4-%EC%A0%90%EC%9D%B4-%EB%8B%A4%EB%A5%B8%EC%A7%80-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94/images/Screenshot_20230130_200110_Whale_hu4bb92a5ab956b645c45c187394b1ee9d_33543_1024x0_resize_q75_box.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;선형 자료구조의 시각화&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;442&#34;
+		data-flex-basis=&#34;1062px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;둘다 선형 자료구조임 (모든 데이터가 앞이나 뒤로 1:1 관계임)&lt;/li&gt;
+&lt;li&gt;선언과 동시에 용량을 정해야하는 기존의 배열을 대체하기 위한 자료구조임&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>
