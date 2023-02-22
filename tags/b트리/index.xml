@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>B트리 on SSAFY 서울 CS 스터디 블로그</title>
+        <link>https://SSAFY-Seoul-CS-Study.github.io/tags/b%ED%8A%B8%EB%A6%AC/</link>
+        <description>Recent content in B트리 on SSAFY 서울 CS 스터디 블로그</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en-us</language>
+        <lastBuildDate>Sat, 04 Feb 2023 23:29:58 +0900</lastBuildDate><atom:link href="https://SSAFY-Seoul-CS-Study.github.io/tags/b%ED%8A%B8%EB%A6%AC/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>B트리(B Tree) 와 B&#43;트리(B&#43; Tree) 의 차이점을 설명해주세요</title>
+        <link>https://SSAFY-Seoul-CS-Study.github.io/p/b%ED%8A%B8%EB%A6%ACb-tree-%EC%99%80-b-%ED%8A%B8%EB%A6%ACb-tree-%EC%9D%98-%EC%B0%A8%EC%9D%B4%EC%A0%90%EC%9D%84-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94/</link>
+        <pubDate>Sat, 04 Feb 2023 23:29:58 +0900</pubDate>
+        
+        <guid>https://SSAFY-Seoul-CS-Study.github.io/p/b%ED%8A%B8%EB%A6%ACb-tree-%EC%99%80-b-%ED%8A%B8%EB%A6%ACb-tree-%EC%9D%98-%EC%B0%A8%EC%9D%B4%EC%A0%90%EC%9D%84-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94/</guid>
+        <description>&lt;h2 id=&#34;b-트리란&#34;&gt;B 트리란?&lt;/h2&gt;
+&lt;h3 id=&#34;balanced-tree&#34;&gt;Balanced Tree&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&#34;https://SSAFY-Seoul-CS-Study.github.io/p/b%ED%8A%B8%EB%A6%ACb-tree-%EC%99%80-b-%ED%8A%B8%EB%A6%ACb-tree-%EC%9D%98-%EC%B0%A8%EC%9D%B4%EC%A0%90%EC%9D%84-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94/images/Untitled.png&#34;
+	width=&#34;1464&#34;
+	height=&#34;752&#34;
+	srcset=&#34;https://SSAFY-Seoul-CS-Study.github.io/p/b%ED%8A%B8%EB%A6%ACb-tree-%EC%99%80-b-%ED%8A%B8%EB%A6%ACb-tree-%EC%9D%98-%EC%B0%A8%EC%9D%B4%EC%A0%90%EC%9D%84-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94/images/Untitled_hue58292474f2e89bf89c04ee4ba0c6b04_195630_480x0_resize_box_3.png 480w, https://SSAFY-Seoul-CS-Study.github.io/p/b%ED%8A%B8%EB%A6%ACb-tree-%EC%99%80-b-%ED%8A%B8%EB%A6%ACb-tree-%EC%9D%98-%EC%B0%A8%EC%9D%B4%EC%A0%90%EC%9D%84-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94/images/Untitled_hue58292474f2e89bf89c04ee4ba0c6b04_195630_1024x0_resize_box_3.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;트리의 밸런스가 맞지 않을 경우의 시각화&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;194&#34;
+		data-flex-basis=&#34;467px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Balanced Tree : 자료의 추가 / 삭제가 발생했을 때 스스로 균형을 유지하는 트리구조&lt;/li&gt;
+&lt;li&gt;이진 트리에서 좌우의 균형이 안 맞는 경우 탐색에 낭비가 발생하기 때문에 사용한다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;위 그림에서 Balanced tree인 좌측 그림은 데이터 탐색의 시간 복잡도가 O(log n)인데 비해&lt;br&gt;
+우측의 트리 구조에서는 데이터 탐색의 시간 복잡도가 O(n)이 된다.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;b트리-vs-이진트리&#34;&gt;B트리 vs. 이진트리&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&#34;https://SSAFY-Seoul-CS-Study.github.io/p/b%ED%8A%B8%EB%A6%ACb-tree-%EC%99%80-b-%ED%8A%B8%EB%A6%ACb-tree-%EC%9D%98-%EC%B0%A8%EC%9D%B4%EC%A0%90%EC%9D%84-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94/images/Untitled1.png&#34;
+	width=&#34;600&#34;
+	height=&#34;251&#34;
+	srcset=&#34;https://SSAFY-Seoul-CS-Study.github.io/p/b%ED%8A%B8%EB%A6%ACb-tree-%EC%99%80-b-%ED%8A%B8%EB%A6%ACb-tree-%EC%9D%98-%EC%B0%A8%EC%9D%B4%EC%A0%90%EC%9D%84-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94/images/Untitled1_huf851fcb3999c88f379d3195a11fed368_182525_480x0_resize_box_3.png 480w, https://SSAFY-Seoul-CS-Study.github.io/p/b%ED%8A%B8%EB%A6%ACb-tree-%EC%99%80-b-%ED%8A%B8%EB%A6%ACb-tree-%EC%9D%98-%EC%B0%A8%EC%9D%B4%EC%A0%90%EC%9D%84-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94/images/Untitled1_huf851fcb3999c88f379d3195a11fed368_182525_1024x0_resize_box_3.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;B트리와 이진트리의 시각화&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;239&#34;
+		data-flex-basis=&#34;573px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;B 트리와 이진트리의 차이점&lt;/p&gt;
+&lt;p&gt;B 트리에서는 하나의 노드에 여러 개의 자료가 들어간다.&lt;/p&gt;
+&lt;p&gt;반면, 이진트리에서는 하나의 노드엔 하나의 자료만 들어간다.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;3-특징&#34;&gt;3) 특징&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;M차 B트리&lt;br&gt;
+ex) 3차 B트리를 예시로 했을 때 B트리의 특징&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;3차이기 때문에 자식 노드를 최대 3개 까지 가질 수 있다.&lt;/li&gt;
+&lt;li&gt;항상 정렬된 상태&lt;/li&gt;
+&lt;li&gt;노드 안에 X개의 데이터가 있다면 자식 노드의 수는 X+1개&lt;/li&gt;
+&lt;li&gt;자식노드의 데이터는 부모의 데이터에 따라서 배치된다.(부모보다 작으면 왼쪽, 크면 오른쪽)&lt;/li&gt;
+&lt;li&gt;모든 리프노드의 데이터 수는 2이하(M-1이하)이다.  —&amp;gt; 리프노드 : 자식이 없는 노드.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;https://SSAFY-Seoul-CS-Study.github.io/p/b%ED%8A%B8%EB%A6%ACb-tree-%EC%99%80-b-%ED%8A%B8%EB%A6%ACb-tree-%EC%9D%98-%EC%B0%A8%EC%9D%B4%EC%A0%90%EC%9D%84-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94/images/Untitled2.png&#34;
+	width=&#34;1125&#34;
+	height=&#34;349&#34;
+	srcset=&#34;https://SSAFY-Seoul-CS-Study.github.io/p/b%ED%8A%B8%EB%A6%ACb-tree-%EC%99%80-b-%ED%8A%B8%EB%A6%ACb-tree-%EC%9D%98-%EC%B0%A8%EC%9D%B4%EC%A0%90%EC%9D%84-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94/images/Untitled2_hub678d71e7118f484cd428ee676e99eab_45190_480x0_resize_box_3.png 480w, https://SSAFY-Seoul-CS-Study.github.io/p/b%ED%8A%B8%EB%A6%ACb-tree-%EC%99%80-b-%ED%8A%B8%EB%A6%ACb-tree-%EC%9D%98-%EC%B0%A8%EC%9D%B4%EC%A0%90%EC%9D%84-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94/images/Untitled2_hub678d71e7118f484cd428ee676e99eab_45190_1024x0_resize_box_3.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;3차 B트리 시각화&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;322&#34;
+		data-flex-basis=&#34;773px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;h2 id=&#34;b-트리-vs-b-트리&#34;&gt;B 트리 vs B+ 트리&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;B트리&lt;/th&gt;
+&lt;th&gt;B+ 트리&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;연결리스트 유무&lt;/td&gt;
+&lt;td&gt;X&lt;/td&gt;
+&lt;td&gt;O&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;→ 전체 데이터를 차례로 처리할 수 있음&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;저장 방식&lt;/td&gt;
+&lt;td&gt;각 노드에 key, data 저장&lt;/td&gt;
+&lt;td&gt;각 노드에 key 저장,&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;data는 리프 노드에만 저장&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;부모 key와 리프노드 첫번째 key의 관계&lt;/td&gt;
+&lt;td&gt;부모 key &amp;lt; 리프노드 첫 번째 key&lt;/td&gt;
+&lt;td&gt;부모 key ≤ 리프노드 첫 번째 key&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&#34;b트리와-b트리의-차이점&#34;&gt;B트리와 B+트리의 차이점&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;연결리스트의 유무&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;B트리는 연결리스트가 없지만 B+트리는 리프노드가 연결리스트를 이룬다.&lt;br&gt;
+따라서 B+트리는 전체 데이터를 차례로 처리가 가능하다.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;key와 data의 저장 방식&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;B 트리에서는 각 노드에 key와 data를 저장&lt;br&gt;
+B+ 트리에서는 각 노드에 key를 저장하지만 data는 모두 리프노드에 저장되어 있다.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;부모 key와 리프노트 첫번째 key의 관계&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;B트리에서는 리프노드의 첫 번째 key는 무조건 부모노드의 key보다 크지만&lt;br&gt;
+B+트리는 삽입 과정에서 리프노드에 있던것이 부모노드로 올라갈 수 있기 때문에&lt;br&gt;
+리프노드의 첫 번째 key가 부모노드의 key보다 크거나 같다.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img src=&#34;https://SSAFY-Seoul-CS-Study.github.io/p/b%ED%8A%B8%EB%A6%ACb-tree-%EC%99%80-b-%ED%8A%B8%EB%A6%ACb-tree-%EC%9D%98-%EC%B0%A8%EC%9D%B4%EC%A0%90%EC%9D%84-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94/images/Untitled2.png&#34;
+	width=&#34;1125&#34;
+	height=&#34;349&#34;
+	srcset=&#34;https://SSAFY-Seoul-CS-Study.github.io/p/b%ED%8A%B8%EB%A6%ACb-tree-%EC%99%80-b-%ED%8A%B8%EB%A6%ACb-tree-%EC%9D%98-%EC%B0%A8%EC%9D%B4%EC%A0%90%EC%9D%84-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94/images/Untitled2_hub678d71e7118f484cd428ee676e99eab_45190_480x0_resize_box_3.png 480w, https://SSAFY-Seoul-CS-Study.github.io/p/b%ED%8A%B8%EB%A6%ACb-tree-%EC%99%80-b-%ED%8A%B8%EB%A6%ACb-tree-%EC%9D%98-%EC%B0%A8%EC%9D%B4%EC%A0%90%EC%9D%84-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94/images/Untitled2_hub678d71e7118f484cd428ee676e99eab_45190_1024x0_resize_box_3.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;B 트리&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;322&#34;
+		data-flex-basis=&#34;773px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://SSAFY-Seoul-CS-Study.github.io/p/b%ED%8A%B8%EB%A6%ACb-tree-%EC%99%80-b-%ED%8A%B8%EB%A6%ACb-tree-%EC%9D%98-%EC%B0%A8%EC%9D%B4%EC%A0%90%EC%9D%84-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94/images/Untitled3.png&#34;
+	width=&#34;804&#34;
+	height=&#34;257&#34;
+	srcset=&#34;https://SSAFY-Seoul-CS-Study.github.io/p/b%ED%8A%B8%EB%A6%ACb-tree-%EC%99%80-b-%ED%8A%B8%EB%A6%ACb-tree-%EC%9D%98-%EC%B0%A8%EC%9D%B4%EC%A0%90%EC%9D%84-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94/images/Untitled3_hu696c3a8a67be0a4c1ac0e7b7ac645c17_130527_480x0_resize_box_3.png 480w, https://SSAFY-Seoul-CS-Study.github.io/p/b%ED%8A%B8%EB%A6%ACb-tree-%EC%99%80-b-%ED%8A%B8%EB%A6%ACb-tree-%EC%9D%98-%EC%B0%A8%EC%9D%B4%EC%A0%90%EC%9D%84-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94/images/Untitled3_hu696c3a8a67be0a4c1ac0e7b7ac645c17_130527_1024x0_resize_box_3.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;B&amp;#43; 트리&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;312&#34;
+		data-flex-basis=&#34;750px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;저장 방식&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;https://SSAFY-Seoul-CS-Study.github.io/p/b%ED%8A%B8%EB%A6%ACb-tree-%EC%99%80-b-%ED%8A%B8%EB%A6%ACb-tree-%EC%9D%98-%EC%B0%A8%EC%9D%B4%EC%A0%90%EC%9D%84-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94/images/Untitled4.png&#34;
+	width=&#34;1125&#34;
+	height=&#34;647&#34;
+	srcset=&#34;https://SSAFY-Seoul-CS-Study.github.io/p/b%ED%8A%B8%EB%A6%ACb-tree-%EC%99%80-b-%ED%8A%B8%EB%A6%ACb-tree-%EC%9D%98-%EC%B0%A8%EC%9D%B4%EC%A0%90%EC%9D%84-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94/images/Untitled4_hu9afd397af287c4feff924b1eca49866a_253319_480x0_resize_box_3.png 480w, https://SSAFY-Seoul-CS-Study.github.io/p/b%ED%8A%B8%EB%A6%ACb-tree-%EC%99%80-b-%ED%8A%B8%EB%A6%ACb-tree-%EC%9D%98-%EC%B0%A8%EC%9D%B4%EC%A0%90%EC%9D%84-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94/images/Untitled4_hu9afd397af287c4feff924b1eca49866a_253319_1024x0_resize_box_3.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;인덱스 노드를 통해 이동&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;173&#34;
+		data-flex-basis=&#34;417px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://SSAFY-Seoul-CS-Study.github.io/p/b%ED%8A%B8%EB%A6%ACb-tree-%EC%99%80-b-%ED%8A%B8%EB%A6%ACb-tree-%EC%9D%98-%EC%B0%A8%EC%9D%B4%EC%A0%90%EC%9D%84-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94/images/Untitled3.png&#34;
+	width=&#34;804&#34;
+	height=&#34;257&#34;
+	srcset=&#34;https://SSAFY-Seoul-CS-Study.github.io/p/b%ED%8A%B8%EB%A6%ACb-tree-%EC%99%80-b-%ED%8A%B8%EB%A6%ACb-tree-%EC%9D%98-%EC%B0%A8%EC%9D%B4%EC%A0%90%EC%9D%84-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94/images/Untitled3_hu696c3a8a67be0a4c1ac0e7b7ac645c17_130527_480x0_resize_box_3.png 480w, https://SSAFY-Seoul-CS-Study.github.io/p/b%ED%8A%B8%EB%A6%ACb-tree-%EC%99%80-b-%ED%8A%B8%EB%A6%ACb-tree-%EC%9D%98-%EC%B0%A8%EC%9D%B4%EC%A0%90%EC%9D%84-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94/images/Untitled3_hu696c3a8a67be0a4c1ac0e7b7ac645c17_130527_1024x0_resize_box_3.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;B&amp;#43; 트리&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;312&#34;
+		data-flex-basis=&#34;750px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;참고 자료&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;B트리&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://velog.io/@emplam27/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0-%EA%B7%B8%EB%A6%BC%EC%9C%BC%EB%A1%9C-%EC%95%8C%EC%95%84%EB%B3%B4%EB%8A%94-B-Tree&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://velog.io/@emplam27/자료구조-그림으로-알아보는-B-Tree&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;B+ 트리&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://velog.io/@emplam27/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0-%EA%B7%B8%EB%A6%BC%EC%9C%BC%EB%A1%9C-%EC%95%8C%EC%95%84%EB%B3%B4%EB%8A%94-B-Plus-Tree&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://velog.io/@emplam27/자료구조-그림으로-알아보는-B-Plus-Tree&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;B트리, B+트리의 자료 추가/삽입&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.youtube.com/watch?v=ysb9BUyVcjw&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://www.youtube.com/watch?v=ysb9BUyVcjw&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>

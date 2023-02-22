@@ -1,30 +1,21 @@
 <!DOCTYPE html>
 <html lang="en-us" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='날짜: 2023/02/04 담당자: TPoster 상태: Done 유형: 자료구조
-Heap : 우선순위 큐를 구현하기 위해 만들어진 완전 이진 트리형 자료구조
-추가된 값들 중에서 최댓값이나 최솟값을 빠르게 찾을 수 있음 이진 탐색 트리와 달리 느슨한 반정렬 상태를 유지함 또한 중복된 값의 추가를 허용함 배열과 리스트에 비해 평균적으로 더 나은 효율을 보여줌 https://gmlwjd9405.github.io/2018/05/10/data-structure-heap.html
-종류 https://gmlwjd9405.github.io/2018/05/10/data-structure-heap.html
-최소 힙 (부모노드 ≤ 자식노드 &amp;amp;&amp;amp; 루트노드 == MAX) 최대 힙 (부모노드 ≥ 자식노드 &amp;amp;&amp;amp; 루트노드 == MAX) 동작방식 1.'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='힙(Heap) 이란 우선순위 큐를 구현하기 위해 만들어진 완전 이진 트리형 자료구조
+추가된 값들 중에서 최댓값이나 최솟값을 빠르게 찾을 수 있음 이진 탐색 트리와 달리 느슨한 반정렬 상태를 유지함 또한 중복된 값의 추가를 허용함 배열과 리스트에 비해 평균적으로 더 나은 효율을 보여줌 종류 최소 힙 (부모노드 ≤ 자식노드 &amp;amp;&amp;amp; 루트노드 == MAX) 최대 힙 (부모노드 ≥ 자식노드 &amp;amp;&amp;amp; 루트노드 == MAX) 동작방식 1. 데이터의 추가 인덱스를 2로 나눈 값의 노드와 비교 (부모노드와 비교) 루트 노드까지 비교하는 경우, 시간 복잡도가 log(n)으로 최대이다.'>
 <title>힙(Heap)의 동작방식과 시간복잡도를 설명해주세요</title>
 
 <link rel='canonical' href='https://SSAFY-Seoul-CS-Study.github.io/p/%ED%9E%99heap%EC%9D%98-%EB%8F%99%EC%9E%91%EB%B0%A9%EC%8B%9D%EA%B3%BC-%EC%8B%9C%EA%B0%84%EB%B3%B5%EC%9E%A1%EB%8F%84%EB%A5%BC-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94/'>
 
 <link rel="stylesheet" href="/scss/style.min.8191399262444ab68b72a18c97392f5349be20a1615d77445be51e974c144cff.css"><meta property='og:title' content='힙(Heap)의 동작방식과 시간복잡도를 설명해주세요'>
-<meta property='og:description' content='날짜: 2023/02/04 담당자: TPoster 상태: Done 유형: 자료구조
-Heap : 우선순위 큐를 구현하기 위해 만들어진 완전 이진 트리형 자료구조
-추가된 값들 중에서 최댓값이나 최솟값을 빠르게 찾을 수 있음 이진 탐색 트리와 달리 느슨한 반정렬 상태를 유지함 또한 중복된 값의 추가를 허용함 배열과 리스트에 비해 평균적으로 더 나은 효율을 보여줌 https://gmlwjd9405.github.io/2018/05/10/data-structure-heap.html
-종류 https://gmlwjd9405.github.io/2018/05/10/data-structure-heap.html
-최소 힙 (부모노드 ≤ 자식노드 &amp;amp;&amp;amp; 루트노드 == MAX) 최대 힙 (부모노드 ≥ 자식노드 &amp;amp;&amp;amp; 루트노드 == MAX) 동작방식 1.'>
+<meta property='og:description' content='힙(Heap) 이란 우선순위 큐를 구현하기 위해 만들어진 완전 이진 트리형 자료구조
+추가된 값들 중에서 최댓값이나 최솟값을 빠르게 찾을 수 있음 이진 탐색 트리와 달리 느슨한 반정렬 상태를 유지함 또한 중복된 값의 추가를 허용함 배열과 리스트에 비해 평균적으로 더 나은 효율을 보여줌 종류 최소 힙 (부모노드 ≤ 자식노드 &amp;amp;&amp;amp; 루트노드 == MAX) 최대 힙 (부모노드 ≥ 자식노드 &amp;amp;&amp;amp; 루트노드 == MAX) 동작방식 1. 데이터의 추가 인덱스를 2로 나눈 값의 노드와 비교 (부모노드와 비교) 루트 노드까지 비교하는 경우, 시간 복잡도가 log(n)으로 최대이다.'>
 <meta property='og:url' content='https://SSAFY-Seoul-CS-Study.github.io/p/%ED%9E%99heap%EC%9D%98-%EB%8F%99%EC%9E%91%EB%B0%A9%EC%8B%9D%EA%B3%BC-%EC%8B%9C%EA%B0%84%EB%B3%B5%EC%9E%A1%EB%8F%84%EB%A5%BC-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94/'>
 <meta property='og:site_name' content='SSAFY 서울 CS 스터디 블로그'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='' /><meta property='article:published_time' content='2023-02-22T23:29:59&#43;09:00'/><meta property='article:modified_time' content='2023-02-22T23:29:59&#43;09:00'/>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='힙' /><meta property='article:tag' content='시간복잡도' /><meta property='article:published_time' content='2023-02-04T23:29:59&#43;09:00'/><meta property='article:modified_time' content='2023-02-04T23:29:59&#43;09:00'/>
 <meta name="twitter:title" content="힙(Heap)의 동작방식과 시간복잡도를 설명해주세요">
-<meta name="twitter:description" content="날짜: 2023/02/04 담당자: TPoster 상태: Done 유형: 자료구조
-Heap : 우선순위 큐를 구현하기 위해 만들어진 완전 이진 트리형 자료구조
-추가된 값들 중에서 최댓값이나 최솟값을 빠르게 찾을 수 있음 이진 탐색 트리와 달리 느슨한 반정렬 상태를 유지함 또한 중복된 값의 추가를 허용함 배열과 리스트에 비해 평균적으로 더 나은 효율을 보여줌 https://gmlwjd9405.github.io/2018/05/10/data-structure-heap.html
-종류 https://gmlwjd9405.github.io/2018/05/10/data-structure-heap.html
-최소 힙 (부모노드 ≤ 자식노드 &amp;amp;&amp;amp; 루트노드 == MAX) 최대 힙 (부모노드 ≥ 자식노드 &amp;amp;&amp;amp; 루트노드 == MAX) 동작방식 1.">
+<meta name="twitter:description" content="힙(Heap) 이란 우선순위 큐를 구현하기 위해 만들어진 완전 이진 트리형 자료구조
+추가된 값들 중에서 최댓값이나 최솟값을 빠르게 찾을 수 있음 이진 탐색 트리와 달리 느슨한 반정렬 상태를 유지함 또한 중복된 값의 추가를 허용함 배열과 리스트에 비해 평균적으로 더 나은 효율을 보여줌 종류 최소 힙 (부모노드 ≤ 자식노드 &amp;amp;&amp;amp; 루트노드 == MAX) 최대 힙 (부모노드 ≥ 자식노드 &amp;amp;&amp;amp; 루트노드 == MAX) 동작방식 1. 데이터의 추가 인덱스를 2로 나눈 값의 노드와 비교 (부모노드와 비교) 루트 노드까지 비교하는 경우, 시간 복잡도가 log(n)으로 최대이다.">
     </head>
     <body class="
     article-page
@@ -200,7 +191,7 @@ Heap : 우선순위 큐를 구현하기 위해 만들어진 완전 이진 트리
         <div class="widget--toc">
             <nav id="TableOfContents">
   <ol>
-    <li><a href="#heap"><em><strong>Heap</strong></em></a></li>
+    <li><a href="#힙heap-이란"><strong>힙(Heap) 이란</strong></a></li>
     <li><a href="#종류"><strong>종류</strong></a></li>
     <li><a href="#동작방식">동작방식</a>
       <ol>
@@ -226,6 +217,10 @@ Heap : 우선순위 큐를 구현하기 위해 만들어진 완전 이진 트리
     <div class="article-details">
     
     <header class="article-category">
+        
+            <a href="/categories/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/" >
+                자료구조
+            </a>
         
     </header>
     
@@ -254,7 +249,7 @@ Heap : 우선순위 큐를 구현하기 위해 만들어진 완전 이진 트리
   <path d="M3 11h16" />
   <path d="M18 16.496v1.504l1 1" />
 </svg>
-                <time class="article-time--published">Feb 22, 2023</time>
+                <time class="article-time--published">Feb 04, 2023</time>
             </div>
         
 
@@ -284,18 +279,10 @@ Heap : 우선순위 큐를 구현하기 위해 만들어진 완전 이진 트리
     <section class="article-content">
     
     
-    <p>날짜: 2023/02/04
-담당자: TPoster
-상태: Done
-유형: 자료구조</p>
-<h2 id="heap"><em><strong>Heap</strong></em></h2>
-<p>: 우선순위 큐를 구현하기 위해 만들어진 완전 이진 트리형 자료구조</p>
-<ul>
-<li>추가된 값들 중에서 최댓값이나 최솟값을 빠르게 찾을 수 있음</li>
-<li>이진 탐색 트리와 달리 느슨한 반정렬 상태를 유지함</li>
-<li>또한 중복된 값의 추가를 허용함</li>
-<li>배열과 리스트에 비해 평균적으로 더 나은 효율을 보여줌</li>
-</ul>
+    <h2 id="힙heap-이란"><strong>힙(Heap) 이란</strong></h2>
+<blockquote>
+<p>우선순위 큐를 구현하기 위해 만들어진 완전 이진 트리형 자료구조</p>
+</blockquote>
 <p><img src="/p/%ED%9E%99heap%EC%9D%98-%EB%8F%99%EC%9E%91%EB%B0%A9%EC%8B%9D%EA%B3%BC-%EC%8B%9C%EA%B0%84%EB%B3%B5%EC%9E%A1%EB%8F%84%EB%A5%BC-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94/images/Untitled.png"
 	width="392"
 	height="167"
@@ -310,56 +297,66 @@ Heap : 우선순위 큐를 구현하기 위해 만들어진 완전 이진 트리
 		data-flex-basis="563px"
 	
 ></p>
-<p><a class="link" href="https://gmlwjd9405.github.io/2018/05/10/data-structure-heap.html"  target="_blank" rel="noopener"
-    >https://gmlwjd9405.github.io/2018/05/10/data-structure-heap.html</a></p>
+<ul>
+<li>추가된 값들 중에서 최댓값이나 최솟값을 빠르게 찾을 수 있음</li>
+<li>이진 탐색 트리와 달리 느슨한 반정렬 상태를 유지함</li>
+<li>또한 중복된 값의 추가를 허용함</li>
+<li>배열과 리스트에 비해 평균적으로 더 나은 효율을 보여줌</li>
+</ul>
 <h2 id="종류"><strong>종류</strong></h2>
-<p><img src="/images/Untitled%201.png"
-	
-	
-	
+<p><img src="/p/%ED%9E%99heap%EC%9D%98-%EB%8F%99%EC%9E%91%EB%B0%A9%EC%8B%9D%EA%B3%BC-%EC%8B%9C%EA%B0%84%EB%B3%B5%EC%9E%A1%EB%8F%84%EB%A5%BC-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94/images/Untitled1.png"
+	width="715"
+	height="285"
+	srcset="/p/%ED%9E%99heap%EC%9D%98-%EB%8F%99%EC%9E%91%EB%B0%A9%EC%8B%9D%EA%B3%BC-%EC%8B%9C%EA%B0%84%EB%B3%B5%EC%9E%A1%EB%8F%84%EB%A5%BC-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94/images/Untitled1_huc43ce76f62f30e181ae733bfd338851c_35011_480x0_resize_box_3.png 480w, /p/%ED%9E%99heap%EC%9D%98-%EB%8F%99%EC%9E%91%EB%B0%A9%EC%8B%9D%EA%B3%BC-%EC%8B%9C%EA%B0%84%EB%B3%B5%EC%9E%A1%EB%8F%84%EB%A5%BC-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94/images/Untitled1_huc43ce76f62f30e181ae733bfd338851c_35011_1024x0_resize_box_3.png 1024w"
 	loading="lazy"
 	
 		alt="https://gmlwjd9405.github.io/2018/05/10/data-structure-heap.html"
 	
 	
+		class="gallery-image" 
+		data-flex-grow="250"
+		data-flex-basis="602px"
+	
 ></p>
-<p><a class="link" href="https://gmlwjd9405.github.io/2018/05/10/data-structure-heap.html"  target="_blank" rel="noopener"
-    >https://gmlwjd9405.github.io/2018/05/10/data-structure-heap.html</a></p>
 <ul>
 <li>최소 힙 (부모노드 ≤ 자식노드 &amp;&amp; 루트노드 == MAX)</li>
 <li>최대 힙 (부모노드 ≥ 자식노드 &amp;&amp; 루트노드 == MAX)</li>
 </ul>
 <h2 id="동작방식">동작방식</h2>
 <h3 id="1-데이터의-추가">1. 데이터의 추가</h3>
-<p><img src="/images/Untitled%202.png"
-	
-	
-	
+<p><img src="/p/%ED%9E%99heap%EC%9D%98-%EB%8F%99%EC%9E%91%EB%B0%A9%EC%8B%9D%EA%B3%BC-%EC%8B%9C%EA%B0%84%EB%B3%B5%EC%9E%A1%EB%8F%84%EB%A5%BC-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94/images/Untitled2.png"
+	width="732"
+	height="858"
+	srcset="/p/%ED%9E%99heap%EC%9D%98-%EB%8F%99%EC%9E%91%EB%B0%A9%EC%8B%9D%EA%B3%BC-%EC%8B%9C%EA%B0%84%EB%B3%B5%EC%9E%A1%EB%8F%84%EB%A5%BC-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94/images/Untitled2_hu20f5e4d1afda37ca99bbf8a65e7c9d30_106246_480x0_resize_box_3.png 480w, /p/%ED%9E%99heap%EC%9D%98-%EB%8F%99%EC%9E%91%EB%B0%A9%EC%8B%9D%EA%B3%BC-%EC%8B%9C%EA%B0%84%EB%B3%B5%EC%9E%A1%EB%8F%84%EB%A5%BC-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94/images/Untitled2_hu20f5e4d1afda37ca99bbf8a65e7c9d30_106246_1024x0_resize_box_3.png 1024w"
 	loading="lazy"
 	
 		alt="https://gmlwjd9405.github.io/2018/05/10/data-structure-heap.html"
 	
 	
+		class="gallery-image" 
+		data-flex-grow="85"
+		data-flex-basis="204px"
+	
 ></p>
-<p><a class="link" href="https://gmlwjd9405.github.io/2018/05/10/data-structure-heap.html"  target="_blank" rel="noopener"
-    >https://gmlwjd9405.github.io/2018/05/10/data-structure-heap.html</a></p>
 <ol>
 <li>인덱스를 2로 나눈 값의 노드와 비교 (부모노드와 비교)</li>
 <li>루트 노드까지 비교하는 경우, 시간 복잡도가 log(n)으로 최대이다.</li>
 </ol>
 <h3 id="데이터의-삭제">데이터의 삭제</h3>
-<p><img src="/images/Untitled%203.png"
-	
-	
-	
+<p><img src="/p/%ED%9E%99heap%EC%9D%98-%EB%8F%99%EC%9E%91%EB%B0%A9%EC%8B%9D%EA%B3%BC-%EC%8B%9C%EA%B0%84%EB%B3%B5%EC%9E%A1%EB%8F%84%EB%A5%BC-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94/images/Untitled3.png"
+	width="726"
+	height="869"
+	srcset="/p/%ED%9E%99heap%EC%9D%98-%EB%8F%99%EC%9E%91%EB%B0%A9%EC%8B%9D%EA%B3%BC-%EC%8B%9C%EA%B0%84%EB%B3%B5%EC%9E%A1%EB%8F%84%EB%A5%BC-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94/images/Untitled3_hu2bbfd3898eb32884db71c11b1946c922_116021_480x0_resize_box_3.png 480w, /p/%ED%9E%99heap%EC%9D%98-%EB%8F%99%EC%9E%91%EB%B0%A9%EC%8B%9D%EA%B3%BC-%EC%8B%9C%EA%B0%84%EB%B3%B5%EC%9E%A1%EB%8F%84%EB%A5%BC-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94/images/Untitled3_hu2bbfd3898eb32884db71c11b1946c922_116021_1024x0_resize_box_3.png 1024w"
 	loading="lazy"
 	
 		alt="https://gmlwjd9405.github.io/2018/05/10/data-structure-heap.html"
 	
 	
+		class="gallery-image" 
+		data-flex-grow="83"
+		data-flex-basis="200px"
+	
 ></p>
-<p><a class="link" href="https://gmlwjd9405.github.io/2018/05/10/data-structure-heap.html"  target="_blank" rel="noopener"
-    >https://gmlwjd9405.github.io/2018/05/10/data-structure-heap.html</a></p>
 <ol>
 <li>삭제 시 인덱스가 가장 높은 값이 루트노드를 대체</li>
 <li>이후 자식 노드들과 비교하며 큰 값과 자리를 교환한다.</li>
@@ -471,6 +468,10 @@ Heap : 우선순위 큐를 구현하기 위해 만들어진 완전 이진 트리
     
     <section class="article-tags">
         
+            <a href="/tags/%ED%9E%99/">힙</a>
+        
+            <a href="/tags/%EC%8B%9C%EA%B0%84%EB%B3%B5%EC%9E%A1%EB%8F%84/">시간복잡도</a>
+        
     </section>
 
 
@@ -509,6 +510,45 @@ Heap : 우선순위 큐를 구현하기 위해 만들어진 완전 이진 트리
 
         <div class="article-details">
             <h2 class="article-title">B트리(B Tree) 와 B&#43;트리(B&#43; Tree) 의 차이점을 설명해주세요</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/%EC%99%84%EC%A0%84-%EC%9D%B4%EC%A7%84%ED%8A%B8%EB%A6%AC-%EA%B5%AC%EC%A1%B0%EB%A5%BC-%EB%B0%B0%EC%97%B4%EB%A1%9C-%EC%96%B4%EB%96%BB%EA%B2%8C-%EA%B5%AC%ED%98%84%ED%95%A0-%EC%88%98-%EC%9E%88%EC%9D%84%EC%A7%80-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">완전 이진트리 구조를 배열로 어떻게 구현할 수 있을지 설명해주세요</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/%EC%8A%A4%ED%83%9Dstack-%EA%B3%BC-%ED%81%90queue-%EA%B0%80-%EC%96%B4%EB%96%BB%EA%B2%8C-%EB%8B%A4%EB%A5%B8%EC%A7%80-%ED%99%9C%EC%9A%A9-%EC%98%88%EC%8B%9C%EB%A5%BC-%ED%86%B5%ED%95%B4-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">스택(Stack) 과 큐(Queue) 가 어떻게 다른지, 활용 예시를 통해 설명해주세요</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/%EB%B0%B0%EC%97%B4arraylist-%EA%B3%BC-%EB%A6%AC%EC%8A%A4%ED%8A%B8linkedlist-%EB%8A%94-%EC%96%B4%EB%96%A4-%EC%A0%90%EC%9D%B4-%EB%8B%A4%EB%A5%B8%EC%A7%80-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">배열(ArrayList) 과 리스트(LinkedList) 는 어떤 점이 다른지 설명해주세요</h2>
         </div>
     </a>
 </article>
