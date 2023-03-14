@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>메모리 on SSAFY 서울 CS 스터디 블로그</title>
+        <link>https://SSAFY-Seoul-CS-Study.github.io/tags/%EB%A9%94%EB%AA%A8%EB%A6%AC/</link>
+        <description>Recent content in 메모리 on SSAFY 서울 CS 스터디 블로그</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en-us</language>
+        <lastBuildDate>Mon, 20 Feb 2023 22:54:22 +0900</lastBuildDate><atom:link href="https://SSAFY-Seoul-CS-Study.github.io/tags/%EB%A9%94%EB%AA%A8%EB%A6%AC/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>메모리(Memory) 가 무엇인지 설명해주세요</title>
+        <link>https://SSAFY-Seoul-CS-Study.github.io/p/%EB%A9%94%EB%AA%A8%EB%A6%ACmemory-%EA%B0%80-%EB%AC%B4%EC%97%87%EC%9D%B8%EC%A7%80-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94/</link>
+        <pubDate>Mon, 20 Feb 2023 22:54:22 +0900</pubDate>
+        
+        <guid>https://SSAFY-Seoul-CS-Study.github.io/p/%EB%A9%94%EB%AA%A8%EB%A6%ACmemory-%EA%B0%80-%EB%AC%B4%EC%97%87%EC%9D%B8%EC%A7%80-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94/</guid>
+        <description>&lt;h2 id=&#34;메모리memory-란&#34;&gt;메모리(Memory) 란?&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;https://SSAFY-Seoul-CS-Study.github.io/p/%EB%A9%94%EB%AA%A8%EB%A6%ACmemory-%EA%B0%80-%EB%AC%B4%EC%97%87%EC%9D%B8%EC%A7%80-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94/images/Untitled.png&#34;
+	width=&#34;737&#34;
+	height=&#34;411&#34;
+	srcset=&#34;https://SSAFY-Seoul-CS-Study.github.io/p/%EB%A9%94%EB%AA%A8%EB%A6%ACmemory-%EA%B0%80-%EB%AC%B4%EC%97%87%EC%9D%B8%EC%A7%80-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94/images/Untitled_hu0e48832a2d71d525cf8438d4f6550136_357469_480x0_resize_box_3.png 480w, https://SSAFY-Seoul-CS-Study.github.io/p/%EB%A9%94%EB%AA%A8%EB%A6%ACmemory-%EA%B0%80-%EB%AC%B4%EC%97%87%EC%9D%B8%EC%A7%80-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94/images/Untitled_hu0e48832a2d71d525cf8438d4f6550136_357469_1024x0_resize_box_3.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;https://information-factory.tistory.com/59&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;179&#34;
+		data-flex-basis=&#34;430px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;CPU가 연산하기 위한 프로그램을 일시적으로 저장하는 공간&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;메모리란 원래 컴퓨터 시스템에 무언가를 저장하는 공간 (RA&lt;strong&gt;M&lt;/strong&gt;, RO&lt;strong&gt;M&lt;/strong&gt;의 마지막 글자는 &lt;strong&gt;M&lt;/strong&gt;emory의 약자)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Hardware 반도체 소자분야에서는 크게 휘발성인 RAM과 비휘발성인 ROM으로 나뉘고 SW 입장에서는 크게 CPU 캐시메모리 / CPU 레지스터(SRAM), &lt;strong&gt;주기억장치(DRAM == 메모리)&lt;/strong&gt;, 디스크(SSD), 롬(ROM, 모니터 마우스 키보드 통신을 위한 BIOS), swap 메모리, 가상메모리, 플래시메모리(휴대저장장치인 USB메모리) 등이 있음&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;메모리dram의-특징&#34;&gt;메모리(DRAM)의 특징&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;순차접근이 아닌 &lt;strong&gt;임의접근(Random Access)&lt;/strong&gt; 방식으로 동작함&lt;/li&gt;
+&lt;li&gt;DRAM 내부의 Capacitor 에 저장되는 전하는 빠르게 방전되기 때문에, 전력이 유지되지 않으면 데이터가 사라지는 &lt;strong&gt;휘발성 메모리&lt;/strong&gt;임&lt;/li&gt;
+&lt;li&gt;CPU 가 디스크(SSD) 에서 데이터 처리속도를 기다리게 되는 병목현상을 해결해주는 &lt;strong&gt;빠른속도의 데이터 처리 중간지점 역할&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;https://SSAFY-Seoul-CS-Study.github.io/p/%EB%A9%94%EB%AA%A8%EB%A6%ACmemory-%EA%B0%80-%EB%AC%B4%EC%97%87%EC%9D%B8%EC%A7%80-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94/images/Untitled1.png&#34;
+	width=&#34;736&#34;
+	height=&#34;412&#34;
+	srcset=&#34;https://SSAFY-Seoul-CS-Study.github.io/p/%EB%A9%94%EB%AA%A8%EB%A6%ACmemory-%EA%B0%80-%EB%AC%B4%EC%97%87%EC%9D%B8%EC%A7%80-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94/images/Untitled1_huf5aeff58a5f5a03aca6f806f39342c85_207901_480x0_resize_box_3.png 480w, https://SSAFY-Seoul-CS-Study.github.io/p/%EB%A9%94%EB%AA%A8%EB%A6%ACmemory-%EA%B0%80-%EB%AC%B4%EC%97%87%EC%9D%B8%EC%A7%80-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94/images/Untitled1_huf5aeff58a5f5a03aca6f806f39342c85_207901_1024x0_resize_box_3.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;https://information-factory.tistory.com/59&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;178&#34;
+		data-flex-basis=&#34;428px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;h2 id=&#34;mmumemory-management-unit-란&#34;&gt;MMU(Memory Management Unit) 란?&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;https://SSAFY-Seoul-CS-Study.github.io/p/%EB%A9%94%EB%AA%A8%EB%A6%ACmemory-%EA%B0%80-%EB%AC%B4%EC%97%87%EC%9D%B8%EC%A7%80-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94/images/Untitled2.png&#34;
+	width=&#34;600&#34;
+	height=&#34;320&#34;
+	srcset=&#34;https://SSAFY-Seoul-CS-Study.github.io/p/%EB%A9%94%EB%AA%A8%EB%A6%ACmemory-%EA%B0%80-%EB%AC%B4%EC%97%87%EC%9D%B8%EC%A7%80-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94/images/Untitled2_huca02628961ff047606ded0adf2e1b58e_80307_480x0_resize_box_3.png 480w, https://SSAFY-Seoul-CS-Study.github.io/p/%EB%A9%94%EB%AA%A8%EB%A6%ACmemory-%EA%B0%80-%EB%AC%B4%EC%97%87%EC%9D%B8%EC%A7%80-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94/images/Untitled2_huca02628961ff047606ded0adf2e1b58e_80307_1024x0_resize_box_3.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;http://recipes.egloos.com/5232056&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;187&#34;
+		data-flex-basis=&#34;450px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;메모리 보호나 캐시 관리 등 CPU가 메모리에 접근하는 것(논리주소 → 물리주소)을 총 관리해주는 하드웨어&lt;/li&gt;
+&lt;li&gt;사용자에게 더 많은 메모리 공간을 제공하기 위해, 프로그램 상에서 사용자가 보는 주소 공간인 가상 주소에서 실제 데이터가 담겨 있는 곳에 접근하기 위해선 빠른 주소 변환을 도와줌&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;MMU가 지원되지 않으면, Physical Address를 직접 접근해야 하기 때문에 부담이 있다.
+→ MMU는 사용자가 기억장소를 일일이 할당해야 하는 불편을 없애준다. → 프로세스의 크기가 실제 메모리의 용량을 초과해도 실행될 수 있게 해준다.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;mmu의-메모리-보호-방식&#34;&gt;MMU의 메모리 보호 방식&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;프로세스는 &lt;strong&gt;독립적인 메모리 공간&lt;/strong&gt;을 가져야 하고, 자신의 공간만 접근해야 한다.
+따라서 MMU는 한 프로세스에게 합법적인 주소 영역을 설정하고, 잘못된 접근이 오면 trap을 발생시키며 보호한다.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;base와-limit-레지스터를-활용한-메모리-보호-기법&#34;&gt;base와 limit 레지스터를 활용한 메모리 보호 기법&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;base 레지스터&lt;/strong&gt; : 메모리상의 프로세스 시작주소를 물리 주소로 저장&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;limit 레지스터&lt;/strong&gt; : 프로세스의 사이즈를 저장&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;P.S. 레지스터란? &lt;strong&gt;프로세서가 바로 사용할 수 있는 데이터를 담고 있는 영역&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;프로세스의 접근 가능한 합법적인 메모리 영역(&lt;code&gt;x&lt;/code&gt;)은 &lt;code&gt;base &amp;lt;= x &amp;lt; base+limit&lt;/code&gt; 이 된다.
+따라서 이 영역 밖에서 접근을 요구하면 trap 을 발생시킨다.
+또한 안전성을 위해 base와 limit 레지스터는 사용자 모드에서는 직접 변경할 수 없도록 &lt;strong&gt;커널 모드에서만 수정 가능&lt;/strong&gt;하도록 설계되었다.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img src=&#34;https://SSAFY-Seoul-CS-Study.github.io/p/%EB%A9%94%EB%AA%A8%EB%A6%ACmemory-%EA%B0%80-%EB%AC%B4%EC%97%87%EC%9D%B8%EC%A7%80-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94/images/Untitled3.png&#34;
+	width=&#34;600&#34;
+	height=&#34;261&#34;
+	srcset=&#34;https://SSAFY-Seoul-CS-Study.github.io/p/%EB%A9%94%EB%AA%A8%EB%A6%ACmemory-%EA%B0%80-%EB%AC%B4%EC%97%87%EC%9D%B8%EC%A7%80-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94/images/Untitled3_hu97d86d686a0b1397c3952f503f8966c8_80931_480x0_resize_box_3.png 480w, https://SSAFY-Seoul-CS-Study.github.io/p/%EB%A9%94%EB%AA%A8%EB%A6%ACmemory-%EA%B0%80-%EB%AC%B4%EC%97%87%EC%9D%B8%EC%A7%80-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94/images/Untitled3_hu97d86d686a0b1397c3952f503f8966c8_80931_1024x0_resize_box_3.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;http://recipes.egloos.com/5232056&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;229&#34;
+		data-flex-basis=&#34;551px&#34;
+	
+&gt;&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>
